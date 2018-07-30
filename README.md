@@ -4,4 +4,4 @@ App móvil para control de visitas
 
 
 
-Para ejecutarlo usar Android Studio 3.1
+Para ejecutarlo usar Android Studio 3.1 o higher
