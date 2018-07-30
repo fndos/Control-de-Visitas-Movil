@@ -1,9 +1,5 @@
 package com.example.root.educateappcontrolvisitas;
 
-import android.content.Context;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -23,18 +18,18 @@ import java.util.ArrayList;
  *
  * create an instance of this fragment.
  */
-public class VisitasFragment extends Fragment {
+public class VisitasHoyFragment extends Fragment {
 
 
 
-    public VisitasFragment() {
+    public VisitasHoyFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.visita_list, container, false);
+        View rootView = inflater.inflate(R.layout.visitas_hoy_lista, container, false);
 
 
         String[] escuelitas = {"UNIDAD EDUCATIVA AMERICO VESPUCIO",

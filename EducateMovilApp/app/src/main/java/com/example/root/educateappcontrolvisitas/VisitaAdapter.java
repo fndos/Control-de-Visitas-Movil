@@ -55,6 +55,9 @@ public class VisitaAdapter extends ArrayAdapter<Visita> {
         TextView escuela_nombre = (TextView) listItemView.findViewById(R.id.escuela_nombre);
         escuela_nombre.setText(currentVisita.getmNombreEscuela());
 
+        TextView escuela_jornada = (TextView) listItemView.findViewById(R.id.escuela_jornada);
+        escuela_jornada.setText(currentVisita.getmJornadaEscuela());
+
         TextView escuela_direccion = (TextView) listItemView.findViewById(R.id.escuela_direccion);
         escuela_direccion.setText(currentVisita.getmDireccionEscuela());
 

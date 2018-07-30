@@ -18,9 +18,17 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+
+
+
+
+
         </activity>
+
         <activity
             android:name=".LoginActivity"
+            android:icon="@mipmap/iconoeducate"
+            android:roundIcon="@mipmap/iconoeducate"
             android:label="@string/title_activity_login">
 
             <intent-filter>
@@ -28,7 +36,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
 
 
         </activity>
