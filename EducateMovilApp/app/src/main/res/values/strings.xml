@@ -23,6 +23,8 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="formato_fecha">dd/mm/yyyy</string>
+    <string name="title_activity_detalle_visita">DetalleVisitaActivity</string>
 
 
 </resources>
