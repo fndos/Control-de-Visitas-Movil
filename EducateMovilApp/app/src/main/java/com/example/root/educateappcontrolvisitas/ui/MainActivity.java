@@ -2,9 +2,6 @@ package com.example.root.educateappcontrolvisitas.ui;
 
 import com.example.root.educateappcontrolvisitas.R;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.firebase.ui.auth.AuthUI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
      * androidx.fragment.app.FragmentStatePagerAdapter.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-    public static final String ANONYMOUS = "anonymous";
-    public static final int RC_SIGN_IN = 123;
 
 
     /**
@@ -51,10 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
     private String mUsername;
 
-    // Firebase instance variables
-    private FirebaseAuth mFirebaseAuth;
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,76 +58,29 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        // Initialize Firebase components
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        mUsername = ANONYMOUS;
+        mUsername = "ayalasaenzjorge";
+
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
 
-        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // User is signed in
-                    onSignedInInitialize(user.getEmail());
-                    // Create the adapter that will return a fragment for each of the three
-                    // primary sections of the activity.
+        mSectionsPagerAdapter.nombreUsuario = mUsername;
 
-                    //FragmentManager miFragmentManager = getSupportFragmentManager();
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
 
 
-                } else {
-                    // User is signed out
-                    onSignedOutCleanup();
-                    startActivityForResult(
-                            // Get an instance of AuthUI based on the default app
-                            AuthUI.getInstance().createSignInIntentBuilder().setIsSmartLockEnabled(false).setLogo(R.drawable.logoeducate).build(),
-                            RC_SIGN_IN);
-                }
-            }
-        };
 
 
 
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RC_SIGN_IN) {
-            if (resultCode == RESULT_OK) {
-                finish();
-                startActivity(getIntent());
-
-                Toast.makeText(this, "Sesión iniciada", Toast.LENGTH_SHORT).show();
-            } else if (resultCode == RESULT_CANCELED) {
-                // Sign in was canceled by the user, finish the activity
-                Toast.makeText(this, "Inicio de sesión cancelado", Toast.LENGTH_SHORT).show();
-                finish();
-
-
-            }
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (mAuthStateListener != null) {
-            mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
-            //finish();
-        }
-
-    }
 
 
 
@@ -159,45 +103,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.sign_out_menu:
-                AuthUI.getInstance().signOut(this);
+                //AuthUI.getInstance().signOut(this);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-
-    private void onSignedInInitialize(String username) {
-
-        mUsername = username;
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        String SubStr1 = new String("@");
-        String SubStr2 = username;
-        String nombreUsuario = SubStr2.substring(0,SubStr2.indexOf( SubStr1 ));
-
-        mSectionsPagerAdapter.nombreUsuario = nombreUsuario;
-
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-
-
-    }
-
-    private void onSignedOutCleanup() {
-        mUsername = ANONYMOUS;
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        //mViewPager.setAdapter(mSectionsPagerAdapter);
-
-
-    }
-
 
 
     /**
