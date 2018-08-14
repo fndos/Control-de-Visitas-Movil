@@ -36,10 +36,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.CheckInActivity"></activity>
-        <activity android:name=".ui.DetallesEscuela">
-            
-        </activity>
+        <activity android:name=".ui.CheckInActivity" />
+        <activity android:name=".ui.DetallesEscuela"></activity>
+        <activity android:name=".ui.TecnicoFormularioActivity"></activity>
     </application>
 
 </manifest>
