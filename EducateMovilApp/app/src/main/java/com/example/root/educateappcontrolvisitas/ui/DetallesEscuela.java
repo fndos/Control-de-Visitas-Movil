@@ -2,7 +2,11 @@ package com.example.root.educateappcontrolvisitas.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -24,6 +28,8 @@ public class DetallesEscuela extends AppCompatActivity{// implements OnMapReadyC
     private String nombresUsuario;
     private String apellidosUsuario;
     private String usuarioID;
+
+    private Button botonCHECKIN;
 
 
     @Override
@@ -63,6 +69,18 @@ public class DetallesEscuela extends AppCompatActivity{// implements OnMapReadyC
         visita_escuela_conTecnico.setText("N/A");
         TextView visita_escuela_accionTomada = (TextView) findViewById(R.id.accionTomada);
         visita_escuela_accionTomada.setText("N/A");
+
+
+        botonCHECKIN = (Button) findViewById(R.id.botonCHECKIN);
+        botonCHECKIN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Lanzando", "formulario");
+                Intent escogerFormularios = new Intent(getApplicationContext(), EscogerFormularioActivity.class);
+                startActivity(escogerFormularios);
+            }
+        });
+
 
         if (mMap == null) {
             SupportMapFragment mapFragment = (WorkaroundMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);

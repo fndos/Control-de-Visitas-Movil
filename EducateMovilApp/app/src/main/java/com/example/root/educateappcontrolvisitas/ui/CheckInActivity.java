@@ -1,12 +1,16 @@
 package com.example.root.educateappcontrolvisitas.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.root.educateappcontrolvisitas.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -48,19 +52,16 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
         escuelaDireccion = (TextView) findViewById(R.id.escuela_direccion);
         button = (Button) findViewById(R.id.button);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EscogerFormularioFragment escogerFormularioFragment = new EscogerFormularioFragment();
-                
-            }
-        });
-       
+
 
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+
+        Log.d("Lanzando", "formulario2");
+
         mMap = googleMap;
 
         mMap.setMinZoomPreference(19);

@@ -37,8 +37,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.CheckInActivity" />
-        <activity android:name=".ui.DetallesEscuela"></activity>
-        <activity android:name=".ui.TecnicoFormularioActivity"></activity>
+        <activity android:name=".ui.DetallesEscuela" />
+        <activity android:name=".ui.TecnicoFormularioActivity" />
+        <activity android:name=".ui.EscogerFormularioActivity"></activity>
     </application>
 
 </manifest>
