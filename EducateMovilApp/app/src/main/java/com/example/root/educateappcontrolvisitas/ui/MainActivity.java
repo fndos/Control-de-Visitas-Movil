@@ -1,7 +1,11 @@
 package com.example.root.educateappcontrolvisitas.ui;
 
 import com.example.root.educateappcontrolvisitas.R;
+import com.example.root.educateappcontrolvisitas.api.service.UsuariosClient;
 import com.google.android.material.tabs.TabLayout;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +15,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +29,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import android.content.SharedPreferences;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +44,13 @@ public class MainActivity extends AppCompatActivity {
      * androidx.fragment.app.FragmentStatePagerAdapter.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    public static final String ANONYMOUS = "anonymous";
+    public static final int RC_SIGN_IN = 123;
+    private String usuario_id;
 
+    public String getUsuario_id() {
+        return usuario_id;
+    }
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -46,6 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
     private String mUsername;
 
+    public String getIdentificadorUsuario() {
+        return identificadorUsuario;
+    }
+
+    //Es lo mismo que usuario_id en la BD
+    private String identificadorUsuario;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +81,73 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        mUsername = "ayalasaenzjorge";
-
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
 
-        mSectionsPagerAdapter.nombreUsuario = mUsername;
+        // Get the Intent that started this activity and extract the string
+        //Intent intent = getIntent();
+        SharedPreferences sharedPreferences = getSharedPreferences("login",MODE_PRIVATE);
+
+        identificadorUsuario = sharedPreferences.getString("usuario_id",null);//intent.getStringExtra("usuario_id");
+
+        mUsername = sharedPreferences.getString("usuario_nombre",null);//intent.getStringExtra("usuario_nombre");
+        System.out.println("------------------Usuario ingresado-------------------------- ");
+        System.out.println("Usuario nombre: " + mUsername);
+        System.out.println("Key usuario(lo uso para obtener el Usuario_id): " + identificadorUsuario);
+
+        Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl("http://deveducate.pythonanywhere.com/")
+                .addConverterFactory(GsonConverterFactory.create());
+        Retrofit retrofit = builder.build();
+
+        UsuariosClient usuariosClient = retrofit.create(UsuariosClient.class);
+        Call<JsonObject> call =  usuariosClient.obtenerUsuarioId(identificadorUsuario,mUsername);
+
+        ///////////////////////////////////////
+
+        call.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                if(response.body() != null){
+
+                    if(response.body() != null && response.body().getAsJsonArray("objects").size() > 0){
+                        JsonElement infoUsuario = response.body().getAsJsonArray("objects").get(0);
+
+                        mSectionsPagerAdapter.usuarioID = infoUsuario.getAsJsonObject().get("id").toString();
+                        System.out.println("Esto devuelve del USUARIO");
+                        System.out.println(infoUsuario);
+                        System.out.println("Con este usuario_id busco las visitas: " + mSectionsPagerAdapter.usuarioID);
+
+                    }
+                    else{
+                        System.out.println("No hay nada");
+
+                    }
+
+                }
+                else {
+                    //errorTextview.setText("No hay visitas que mostrar");
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+
+                //Toast.makeText(this, "error :(", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+        //mSectionsPagerAdapter.usuarioID = usuario_id;
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -104,6 +188,16 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.sign_out_menu:
                 //AuthUI.getInstance().signOut(this);
+                //Manejar SharedPreferences para Sign out
+                SharedPreferences sp=getSharedPreferences("login",MODE_PRIVATE);
+                SharedPreferences.Editor e=sp.edit();
+                e.clear();
+                e.commit();
+
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                finish();   //
+
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -119,7 +213,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        String nombreUsuario;
+        //Lo uso para buscar visitas
+        String usuarioID;
 
         public SectionsPagerAdapter(FragmentManager fm) {
 
@@ -134,10 +229,10 @@ public class MainActivity extends AppCompatActivity {
 
 
             if(position == 0){
-                return new VisitasHoyFragment().newInstance(nombreUsuario);
+                return new VisitasHoyFragment().newInstance(usuarioID);
             }
             else{
-                return new OtrasVisitasFragment().newInstance(nombreUsuario);
+                return new OtrasVisitasFragment().newInstance(usuarioID);
 
 
             }
@@ -149,4 +244,5 @@ public class MainActivity extends AppCompatActivity {
             return 2;
         }
     }
+
 }

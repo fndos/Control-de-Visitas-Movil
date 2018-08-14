@@ -48,19 +48,19 @@ public class VisitaAdapter extends ArrayAdapter<Visita> {
 
 
         TextView visita_numero = (TextView) listItemView.findViewById(R.id.visita_numero);
-        visita_numero.setText(currentVisita.getNumeroVisita());
+        visita_numero.setText("N°000000190");
 
         TextView visita_hora = (TextView) listItemView.findViewById(R.id.visita_hora);
-        visita_hora.setText(currentVisita.getHoraVisita());
+        visita_hora.setText(currentVisita.getHora_inicio_visita());
 
         TextView escuela_MIE = (TextView) listItemView.findViewById(R.id.escuela_MIE);
-        escuela_MIE.setText(currentVisita.getMieEscuela());
+        escuela_MIE.setText(currentVisita.getAmie());
 
         TextView escuela_jornada = (TextView) listItemView.findViewById(R.id.escuela_jornada);
-        escuela_jornada.setText(currentVisita.getJornadaEscuela());
+        escuela_jornada.setText("VESPERTINA");
 
         TextView escuela_direccion = (TextView) listItemView.findViewById(R.id.escuela_direccion);
-        escuela_direccion.setText(currentVisita.getDireccionEscuela());
+        escuela_direccion.setText(currentVisita.getDireccion());
 
 
         TextView escuela_nombre = (TextView) listItemView.findViewById(R.id.escuela_nombre);

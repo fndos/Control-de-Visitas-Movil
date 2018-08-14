@@ -3,6 +3,8 @@ package com.example.root.educateappcontrolvisitas.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 
 import androidx.annotation.NonNull;
@@ -71,13 +73,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      */
     private static final int REQUEST_READ_CONTACTS = 0;
 
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
+
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -88,38 +84,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private SharedPreferences sp;
+    private String nombreUsuario;
+    private String usuarioId;
+
 
 
     Retrofit.Builder builder = new Retrofit.Builder()
             .baseUrl("http://deveducate.pythonanywhere.com/")
             .addConverterFactory(GsonConverterFactory.create());
     Retrofit retrofit = builder.build();
-/*
-    UsuariosClient client = retrofit.create(UsuariosClient.class);
-    Call<JsonObject> call = client.obtenerNombreUsuario(mEmail);
-
-            call.enqueue(new Callback<JsonObject>() {
-        //boolean usuarioExiste = ;
-        @Override
-        public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-            if(response.body() != null){
-                //mEmail = "fgfgf";
-
-                usuarioExiste = true;
-
-                //= true;
-
-            }
-
-        }
-
-        @Override
-        public void onFailure(Call<JsonObject> call, Throwable t) {
-            //return false;
-
-        }
-    });
-*/
 
 
 
@@ -155,6 +129,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+
+        sp=getSharedPreferences("login",MODE_PRIVATE);
+
+        //if SharedPreferences contains username and password then directly redirect to Home activity
+        if(sp.contains("usuario_nombre") && sp.contains("usuario_id")){
+
+
+            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+
+            finish();   //finish current activity
+        }
     }
 
     private void populateAutoComplete() {
@@ -360,10 +346,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         private final String mEmail;
         private final String mPassword;
+        private String usuarioId;
 
         UserLoginTask(String email, String password) {
             mEmail = email;
             mPassword = password;
+            usuarioId = "";
 
         }
 
@@ -387,9 +375,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         salt = salt.substring(1, salt.length()-1);
                         String user_pwd = atributosKeyUsuario.getAsJsonObject().get("user_pwd").toString();
                         user_pwd = user_pwd.substring(1,user_pwd.length()-1);
+                        usuarioId = atributosKeyUsuario.getAsJsonObject().get("id").toString();
+
+
                         System.out.println(atributosKeyUsuario);
                         System.out.println("El usuario en BD: " +  usuario + " con salt: " + salt + " y user_pwd: "+ user_pwd);
                         System.out.println("El usuario ingresado: " + mEmail + " con pasword ingresado: "+ mPassword);
+                        System.out.println("El usuario ingresado tiene id: " + usuarioId);
 
 
                         String parametro = mPassword  + "." + salt;
@@ -416,9 +408,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
 
                         boolean exito = password_login.equals(user_pwd);
+
+
+
+
+
+
+
+
+
                         return exito;
                     }
                     else{
+                        System.out.println("falla la llamada al API");
                         return false;
                     }
 
@@ -430,31 +432,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 e.printStackTrace();
             }
 
-
-
-
-
-
-
-          /*
-            try {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                return false;
-            }
-
-
-
-
-
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
-            }*/
 
             //TODO: no existe la cuenta, espacio para codigo que realice una futura funcionalidad
             //TODO: de registro
@@ -468,6 +445,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
+
+                Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+
+                mainIntent.putExtra("usuario_id",usuarioId);
+                mainIntent.putExtra("usuario_nombre",mEmail);
+
+                //Manejar las SharedPreferences para mantener al usuario logged in
+                SharedPreferences.Editor e=sp.edit();
+                e.putString("usuario_nombre",mEmail);
+                e.putString("usuario_id",usuarioId);
+                e.commit();
+                // Start the new activity
+                startActivity(mainIntent);
                 finish();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
