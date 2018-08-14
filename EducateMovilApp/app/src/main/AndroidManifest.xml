@@ -39,7 +39,8 @@
         <activity android:name=".ui.CheckInActivity" />
         <activity android:name=".ui.DetallesEscuela" />
         <activity android:name=".ui.TecnicoFormularioActivity" />
-        <activity android:name=".ui.EscogerFormularioActivity"></activity>
+        <activity android:name=".ui.EscogerFormularioActivity" />
+        <activity android:name=".ui.CheckOutActivity"></activity>
     </application>
 
 </manifest>
