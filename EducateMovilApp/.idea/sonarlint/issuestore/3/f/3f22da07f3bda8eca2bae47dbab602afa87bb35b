@@ -1,89 +1,0 @@
-
-Bsquid:S1659"!Declare "mes" on a separate line.(–¨ƒûûÿÿÿÿ8‹³ê´Ó,
-|squid:S1192"[Define a constant instead of duplicating this literal "No hay visitas que mostrar" 4 times.(ÎžÐìþÿÿÿÿ8‹³ê´Ó,
-zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(µ®–äüÿÿÿÿ8‹³ê´Ó,
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Œ½¾®8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(þù¹–øÿÿÿÿ8‹³ê´Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(­¤ÙÑ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(£êþÿÿÿÿ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÊÀÆÇùÿÿÿÿ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(¨÷±›ûÿÿÿÿ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ÿ×›—øÿÿÿÿ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(’÷Ôãøÿÿÿÿ8‹³ê´Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.( Ûù‹8‹³ê´Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÂÜ€8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ð£òŽùÿÿÿÿ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(÷¶™öøÿÿÿÿ8‹³ê´Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ïÈ¹š8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(€­Íùÿÿÿÿ8‹³ê´Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(„ªÕˆ8‹³ê´Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(õûüÿ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(™öè¼þÿÿÿÿ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(¸ÖµËøÿÿÿÿ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(ïË“Äüÿÿÿÿ8‹³ê´Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ŽûÅŠ8‹³ê´Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(»‰‚Œ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(­÷ÿ§ùÿÿÿÿ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(«™Ÿûÿÿÿÿ8‹³ê´Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(­¤ÙÑ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(“ŠÛßøÿÿÿÿ8‹³ê´Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(­÷ÿ§ùÿÿÿÿ8‹³ê´Ó,
-Osquid:S1905".Remove this unnecessary cast to "ImageButton".(Áàô¶øÿÿÿÿ8‹³ê´Ó,
-Gsquid:S1905"+Remove this unnecessary cast to "TextView".(¹û÷£8‹³ê´Ó,
-Lsquid:S1905"+Remove this unnecessary cast to "ListView".(ÖØñ¯þÿÿÿÿ8‹³ê´Ó,
-Gsquid:S1905"+Remove this unnecessary cast to "TextView".(Çœéï8‹³ê´Ó,
-ssquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(¾›·ãøÿÿÿÿ8‹³ê´Ó,
-Isquid:S1185"(Remove this method to simply inherit it.(º£”úÿÿÿÿ8‹³ê´Ó,
-msquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù°ñR8‹³ê´Ó,
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖØ¦8‹³ê´Ó,
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡œô¥8‹³ê´Ó,
-msquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½×Ï8‹³ê´Ó,
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢‡çŠ8‹³ê´Ó,
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òƒ Å8‹³ê´Ó,
-ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó±¯õüÿÿÿÿ8‹³ê´Ó,
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅÇ÷Ë8‹³ê´Ó,
-ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬µš¼ûÿÿÿÿ8‹³ê´Ó,
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï—ª¿8‹³ê´Ó,
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë­Ç¢8‹³ê´Ó,
-msquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰·ûY8‹³ê´Ó,
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬Åã²8‹³ê´Ó,
-ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÍìÓýÿÿÿÿ8‹³ê´Ó,
-ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÊÅÛüÿÿÿÿ8‹³ê´Ó,
-ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜÉåúÿÿÿÿÿ8‹³ê´Ó,
-ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã†ü¯øÿÿÿÿ8‹³ê´Ó,
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹†¹Ñ8‹³ê´Ó,
-ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ê¨±íþÿÿÿÿ8‹³ê´Ó,
-ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ðŽ¥“üÿÿÿÿ8‹³ê´Ó,
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™€êù8‹³ê´Ó,
-`squid:UselessImportCheck"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8‹³ê´Ó,
-Xsquid:UselessImportCheck"/Remove this unused import 'java.util.Calendar'.(ÿÛö´8‹³ê´Ó,
-]squid:UselessImportCheck"4Remove this unused import 'android.widget.EditText'.(†Å›Ú8‹³ê´Ó,
-Bsquid:S2129"!Remove this "Integer" constructor(Òé…©ýÿÿÿÿ8‹³ê´Ó,
-Bsquid:S2129"!Remove this "Integer" constructor(Òé…©ýÿÿÿÿ8‹³ê´Ó,
-=squid:S2129"!Remove this "Integer" constructor(Í²…¿8‹³ê´Ó,
-=squid:S2129"!Remove this "Integer" constructor(Í²…¿8‹³ê´Ó,

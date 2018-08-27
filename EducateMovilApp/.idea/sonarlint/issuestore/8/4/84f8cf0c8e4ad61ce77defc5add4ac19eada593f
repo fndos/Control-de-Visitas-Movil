@@ -1,12 +1,0 @@
-
-rsquid:S1450"VRemove the "mParam2" field and declare it as a local variable in the relevant methods.(¡ˆ€ 8–ƒì´Ó,
-csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(ÝŒÜ±8–ƒì´Ó,
-Gsquid:S1068"+Remove this unused "mParam1" private field.(•Íï‘8–ƒì´Ó,
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(úŒ«Ú8èÜð´Ó,
-Ssquid:S1135"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8–ƒì´Ó,
-Ssquid:S1135"2Complete the task associated to this TODO comment.(ðï¢öúÿÿÿÿ8–ƒì´Ó,
-Nsquid:S1135"2Complete the task associated to this TODO comment.(‡‚ùˆ8–ƒì´Ó,
-rsquid:S1450"VRemove the "mParam1" field and declare it as a local variable in the relevant methods.(•Íï‘8–ƒì´Ó,
-Nsquid:S1135"2Complete the task associated to this TODO comment.(åµÈ¶8–ƒì´Ó,
-Gsquid:S1068"+Remove this unused "mParam2" private field.(¡ˆ€ 8–ƒì´Ó,
-Ssquid:S1135"2Complete the task associated to this TODO comment.(ßíŠÿÿÿÿÿ8–ƒì´Ó,

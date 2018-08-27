@@ -1,50 +1,0 @@
-
-Isquid:S1066"/Merge this if statement with the enclosing one.(¿±Ïßüÿÿÿÿ
-Osquid:S1068"5Remove this unused "DUMMY_CREDENTIALS" private field.(ÛÇçÌùÿÿÿÿ
-<squid:S1214""Move constants to a class or enum.(×™´ªùÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ß·ÐÞýÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¡»¢üùÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(¢¼¹ýÿÿÿÿ
-L
-squid:S106"9Replace this use of System.out or System.err by a logger.(–÷d
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(¶ù·”ýÿÿÿÿ
-L
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÐÜÍ/
-M
-squid:S106"9Replace this use of System.out or System.err by a logger.(˜©¢Ò
-rsquid:S1488"]Immediately return this expression instead of assigning it to the temporary variable "exito".(Š£©é
-Osquid:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
-Lsquid:S1135"2Complete the task associated to this TODO comment.(ÉÓÈìýÿÿÿÿ
-Gsquid:S1135"2Complete the task associated to this TODO comment.(ž¼í 
-Gsquid:S1135"2Complete the task associated to this TODO comment.(Ö¾ã¯
-Lsquid:S1135"2Complete the task associated to this TODO comment.(í¤Ùôùÿÿÿÿ
-Gsquid:S1135"2Complete the task associated to this TODO comment.(ü¢ä‘
-Qsquid:S1905"7Remove this unnecessary cast to "AutoCompleteTextView".(À˜‚ìþÿÿÿÿ
-@squid:S1905"+Remove this unnecessary cast to "EditText".(÷Î§ò
-gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Æ¿ú„
-lsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(˜ÒŠ¹ÿÿÿÿÿ
-]squid:CallToDeprecatedMethod"7Remove this use of "LoaderCallbacks"; it is deprecated.(ôã©Ö
-^squid:CallToDeprecatedMethod"8Remove this use of "getLoaderManager"; it is deprecated.(–êÙÂ
-Tsquid:CallToDeprecatedMethod".Remove this use of "Loader"; it is deprecated.(Ýü¥ý
-Zsquid:CallToDeprecatedMethod"4Remove this use of "CursorLoader"; it is deprecated.(ëéºæ
-Ysquid:CallToDeprecatedMethod".Remove this use of "Loader"; it is deprecated.(Ÿ ßþùÿÿÿÿ
-Ysquid:CallToDeprecatedMethod".Remove this use of "Loader"; it is deprecated.(ô¬ý¶ùÿÿÿÿ
-Xsquid:S2259"DA "NullPointerException" could be thrown; "digest" is nullable here.(¿¹“]
-›squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ô¬ý¶ùÿÿÿÿ
-Osquid:S2386"5Move "PROJECTION" to a class and lower its visibility(‡ÎÌÑùÿÿÿÿ
-gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹¼úË
-lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÖ´›ÿÿÿÿÿ
-†squid:UselessImportCheck"_Remove this unused import 'com.example.root.educateappcontrolvisitas.ui.adapter.VisitaAdapter'.(ø«þïùÿÿÿÿ
-‚squid:UselessImportCheck"`Remove this unused import 'com.example.root.educateappcontrolvisitas.api.service.VisitasClient'.(¦ìä
-Wsquid:UselessImportCheck"0Remove this unused import 'org.json.JSONObject'.(œÖ´üþÿÿÿÿ
-Xsquid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ
-\squid:UselessImportCheck":Remove this unused import 'java.security.DigestException'.(åÔÆÌ
-~squid:UselessImportCheck"WRemove this unused import 'com.example.root.educateappcontrolvisitas.api.model.Visita'.(«ÛÝÝûÿÿÿÿ
-Xsquid:UselessImportCheck"6Remove this unused import 'com.google.gson.JsonArray'.(ÎöêŠ
-=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-tsquid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¾Î›Š
-tsquid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¾Î›Š
-csquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(ôã©Ö
