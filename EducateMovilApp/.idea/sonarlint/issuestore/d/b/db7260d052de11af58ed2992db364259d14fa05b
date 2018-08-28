@@ -1,28 +1,0 @@
-
-}squid:S1450"\Remove the "escuelaNombre" field and declare it as a local variable in the relevant methods.(¾³Çìøÿÿÿÿ8ï¬Ş´Ó,
-Jsquid:S1068".Remove this unused "escuelaMIE" private field.(–ëßÕ8Ş„Ş´Ó,
-Fsquid:S1905"+Remove this unnecessary cast to "TextView".(ÿ÷Åh8§ŞŞ´Ó,
-Lsquid:S1905"+Remove this unnecessary cast to "TextView".(«“œ®ıÿÿÿÿ8§ŞŞ´Ó,
-|squid:S1450"[Remove the "visitaNumero" field and declare it as a local variable in the relevant methods.(Èë•ûÿÿÿÿ8ï¬Ş´Ó,
-Ssquid:S1068"7Remove this unused "visitaTextContainer" private field.(ÊıË¨8Ş„Ş´Ó,
-tsquid:S1450"SRemove the "mMap" field and declare it as a local variable in the relevant methods.(—­ƒÌÿÿÿÿÿ8Ş„Ş´Ó,
-Jsquid:S1905")Remove this unnecessary cast to "Button".(‰¹œçıÿÿÿÿ8§ŞŞ´Ó,
-usquid:S1450"YRemove the "escuelaMIE" field and declare it as a local variable in the relevant methods.(–ëßÕ8ï¬Ş´Ó,
-Fsquid:S1068"*Remove this unused "button" private field.(ÈòÉ¹8Ş„Ş´Ó,
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(õºçÌ8Ş„Ş´Ó,
-Lsquid:S1905"+Remove this unnecessary cast to "TextView".(·§ôƒûÿÿÿÿ8§ŞŞ´Ó,
-Qsquid:S1068"0Remove this unused "visitaNumero" private field.(Èë•ûÿÿÿÿ8Ş„Ş´Ó,
-ysquid:S1450"]Remove the "escuelaJornada" field and declare it as a local variable in the relevant methods.(¡Å¹8ï¬Ş´Ó,
-zsquid:S1450"YRemove the "visitaHora" field and declare it as a local variable in the relevant methods.(¥µ‹¿øÿÿÿÿ8ï¬Ş´Ó,
-Osquid:S1068".Remove this unused "visitaHora" private field.(¥µ‹¿øÿÿÿÿ8Ş„Ş´Ó,
-Rsquid:S1905"1Remove this unnecessary cast to "RelativeLayout".(Òë‘„úÿÿÿÿ8ÓõŞ´Ó,
-Lsquid:S1905"+Remove this unnecessary cast to "TextView".(‚÷øÿÿÿÿ8§ŞŞ´Ó,
-€squid:S1450"_Remove the "escuelaDireccion" field and declare it as a local variable in the relevant methods.(öÛíîüÿÿÿÿ8ï¬Ş´Ó,
-Nsquid:S1068"2Remove this unused "escuelaJornada" private field.(¡Å¹8Ş„Ş´Ó,
-~squid:S1450"bRemove the "visitaTextContainer" field and declare it as a local variable in the relevant methods.(ÊıË¨8ï¬Ş´Ó,
-jsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(×„ß8Ş„Ş´Ó,
-Gsquid:S1905"+Remove this unnecessary cast to "TextView".(ñÌÒ¨8§ŞŞ´Ó,
-qsquid:S1450"URemove the "button" field and declare it as a local variable in the relevant methods.(ÈòÉ¹8ï¬Ş´Ó,
-Gsquid:S1905"+Remove this unnecessary cast to "TextView".(õ¬‰Ç8§ŞŞ´Ó,
-Rsquid:S1068"1Remove this unused "escuelaNombre" private field.(¾³Çìøÿÿÿÿ8Ş„Ş´Ó,
-Usquid:S1068"4Remove this unused "escuelaDireccion" private field.(öÛíîüÿÿÿÿ8Ş„Ş´Ó,

@@ -1,36 +1,0 @@
-
-zsquid:S1450"YRemove the "mViewPager" field and declare it as a local variable in the relevant methods.(Õîµýúÿÿÿÿ8¯½ò³Ó,
-lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ8¯½ò³Ó,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(°¸ô‹üÿÿÿÿ8¯½ò³Ó,
-fsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÿð÷J8¯½ò³Ó,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(é¦™‘øÿÿÿÿ8¯½ò³Ó,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(èýªÑøÿÿÿÿ8¯½ò³Ó,
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(âøß¶8¯½ò³Ó,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(™¾¬Ÿýÿÿÿÿ8¯½ò³Ó,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(—Ú¥ƒÿÿÿÿÿ8¯½ò³Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ð¡Žô8¯½ò³Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÜÛ¡Ï8¯½ò³Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(ìŒýÐýÿÿÿÿ8¯½ò³Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ˆ…Á½8¯½ò³Ó,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ö¶’¹8¯½ò³Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(ð¤°œÿÿÿÿÿ8¯½ò³Ó,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(­÷ÿ§ùÿÿÿÿ8¯½ò³Ó,
-Ksquid:S1905"*Remove this unnecessary cast to "Toolbar".(ªü–ýÿÿÿÿ8¯½ò³Ó,
-Msquid:S1905",Remove this unnecessary cast to "ViewPager".(—¯¢•ûÿÿÿÿ8¯½ò³Ó,
-Hsquid:S1905",Remove this unnecessary cast to "TabLayout".(éÍíà8¯½ò³Ó,
-Vsquid:S2209"5Change this instance-reference to a static reference.(—÷Ì÷úÿÿÿÿ8¯½ò³Ó,
-Vsquid:S2209"5Change this instance-reference to a static reference.(‚àýœüÿÿÿÿ8¯½ò³Ó,
-psquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äý ¸ýÿÿÿÿ8¯½ò³Ó,
-wsquid:S00116"URename this field "usuario_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä²™‡øÿÿÿÿ8¯½ò³Ó,
-[squid:UselessImportCheck"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8¯½ò³Ó,
-asquid:UselessImportCheck"8Remove this unused import 'androidx.annotation.NonNull'.(ˆÛúÜ8¯½ò³Ó,
-Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¯½ò³Ó,
-_squid:UselessImportCheck"6Remove this unused import 'com.google.gson.JsonArray'.(ÎöêŠ8¯½ò³Ó,
-jsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(²Ú±Ž8¯½ò³Ó,

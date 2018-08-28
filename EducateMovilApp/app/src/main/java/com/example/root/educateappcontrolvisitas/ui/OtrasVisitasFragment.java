@@ -34,6 +34,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -63,6 +64,7 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
     private TextView errorTextview;
     private View rootView;
     private List<Visita> visitasDeFecha;
+    private List<Visita> todasLasVisitas;
 
 
     ImageButton selectDate;
@@ -116,6 +118,8 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
 
 
 
+
+
         return rootView;
     }
 
@@ -162,12 +166,270 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
         listView = (ListView) rootView.findViewById(R.id.otrasVisitasList);
 
         errorTextview = (TextView) rootView.findViewById(R.id.errorViewOtras);
+        errorTextview.setVisibility(View.VISIBLE);
         visitasDeFecha = new ArrayList<Visita>();
+
+
+        Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl("http://deveducate.pythonanywhere.com/")
+                .addConverterFactory(GsonConverterFactory.create());
+        Retrofit retrofit = builder.build();
+
+        VisitasClient visitasClient = retrofit.create(VisitasClient.class);
+        Call<JsonObject> call =  visitasClient.obtenerVisitas("system","ABC123456789");
+
+        ///////////////////////////////////////
+
+        call.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                if(response.body() != null){
+
+                    if(response.body() != null && response.body().getAsJsonArray("objects").size() > 0){
+                        JsonElement todasLasVisitasdeBD = response.body().getAsJsonArray("objects");
+
+                        int totalVisitas = ((JsonArray) todasLasVisitasdeBD).size();
+
+
+
+                        System.out.println("Hay " + totalVisitas + " visitas en la BD");
+
+
+
+
+                        for(int i = 0;  i < totalVisitas ; i++){
+                            JsonElement visita = ((JsonArray) todasLasVisitasdeBD).get(i);
+                            //System.out.println("----------------------------------------------------" );
+                            //System.out.println("Visita N° " + (i+1));
+                            //System.out.println(visita);
+                            JsonElement visita_requerimiento = visita.getAsJsonObject().get("requirement");
+                            JsonElement visita_user = visita.getAsJsonObject().get("user");
+
+                            JsonElement check_in =  visita.getAsJsonObject().get("check_in");
+                            String visita_checkIn;
+                            if(check_in.isJsonNull()){
+                                visita_checkIn = "null";
+
+                            }
+                            else{
+                                visita_checkIn = visita.getAsJsonObject().get("check_in").getAsString();
+                            }
+                            JsonElement checkout = visita.getAsJsonObject().get("check_out");
+                            String visita_checkOut;
+                            if(checkout.isJsonNull()){
+                                visita_checkOut = "null";
+                            }
+                            else{
+
+                                visita_checkOut = visita.getAsJsonObject().get("check_out").getAsString();
+                            }
+
+                            JsonElement lat_in = visita.getAsJsonObject().get("coordinates_lat_in");
+                            double visita_lat_in;
+                            if(lat_in.isJsonNull()){
+                                visita_lat_in = 0.0;
+                            }
+                            else {
+                                visita_lat_in = visita.getAsJsonObject().get("coordinates_lat_in").getAsDouble();
+                            }
+
+                            JsonElement lat_out = visita.getAsJsonObject().get("coordinates_lat_out");
+                            double visita_lat_out;
+                            if(lat_out.isJsonNull()){
+                                visita_lat_out = 0.0;
+                            }
+                            else{
+                                visita_lat_out = visita.getAsJsonObject().get("coordinates_lat_out").getAsDouble();
+                            }
+                            JsonElement lon_in = visita.getAsJsonObject().get("coordinates_lon_in");
+                            double visita_lon_in;
+                            if(lon_in.isJsonNull()){
+                                visita_lon_in = 0.0;
+                            }
+                            else {
+                                visita_lon_in = visita.getAsJsonObject().get("coordinates_lon_in").getAsDouble();
+                            }
+                            JsonElement lon_out = visita.getAsJsonObject().get("coordinates_lon_out");
+                            double visita_lon_out;
+                            if(lon_out.isJsonNull()){
+                                visita_lon_out = 0.0;
+                            }
+                            else{
+
+                                visita_lon_out = visita.getAsJsonObject().get("coordinates_lon_out").getAsDouble();
+                            }
+
+                            String visita_date_planned = visita.getAsJsonObject().get("date_planned").getAsString();
+                            int visita_id = visita.getAsJsonObject().get("id").getAsInt();
+                            int requerimiento_id = visita_requerimiento.getAsJsonObject().get("id").getAsInt();
+                            String requerimiento_reason = visita_requerimiento.getAsJsonObject().get("reason").getAsString();
+                            JsonElement visita_Escuela = visita_requerimiento.getAsJsonObject().get("school");
+                            String escuela_direccion = visita_Escuela.getAsJsonObject().get("address").getAsString();
+                            String escuela_embajador_in = visita_Escuela.getAsJsonObject().get("ambassador_in").getAsString();
+                            String escuela_amie = visita_Escuela.getAsJsonObject().get("amie").getAsString();
+                            String escuela_nombre = visita_Escuela.getAsJsonObject().get("name").getAsString();
+                            String escuela_parroquia = visita_Escuela.getAsJsonObject().get("parish").getAsString();
+                            String escuela_referencia = visita_Escuela.getAsJsonObject().get("reference").getAsString();
+                            JsonElement estado_visita = visita.getAsJsonObject().get("state");
+                            int visita_estado;
+                            if(estado_visita.isJsonNull()){
+                                visita_estado = 1;
+                            }
+                            else{
+                                visita_estado = visita.getAsJsonObject().get("state").getAsInt();
+                            }
+
+                            JsonElement visita_tipo_json = visita.getAsJsonObject().get("type");
+                            int visita_tipo;
+                            if(visita_tipo_json.isJsonNull()){
+                                visita_tipo = 0;
+
+                            }
+                            else {
+                                visita_tipo = visita.getAsJsonObject().get("type").getAsInt();
+                            }
+                            int tipo_usuario = visita_user.getAsJsonObject().get("user_type").getAsInt();
+
+                            int usuario_id = visita_user.getAsJsonObject().get("id").getAsInt();
+                            String usuario_username = visita_user.getAsJsonObject().get("username").getAsString();
+
+
+                            int idUsuario = Integer.parseInt(usuarioID);
+                            System.out.println("-------------------------------------------------------------------------------------");
+                            System.out.println("Visita N° " + i);
+                            System.out.println("Datos de visita buscada " + fechaEscogida +","+nombreUsuario + ","+idUsuario);
+                            System.out.println("Datos de visita actual " + visita_date_planned + ","+ usuario_username + ","+usuario_id);
+                            boolean esDeEstaFecha = visita_date_planned.contains(fechaEscogida) && usuario_username.equals(nombreUsuario) && usuario_id == idUsuario;
+                            System.out.println("Es de esta fecha? " + esDeEstaFecha);
+                            if(esDeEstaFecha){
+
+                                Visita nuevaVisita = new Visita();
+
+                                Date todayDate = Calendar.getInstance().getTime();
+                                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                                String fechaHoy = formatter.format(todayDate);
+
+                                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+                                Date date1 = null;
+                                Date date2 = null;
+                                boolean fechaExpirada = false;
+                                try {
+                                    date1 = sdf.parse(fechaEscogida);
+                                    date2 = sdf.parse(fechaHoy);
+                                    fechaExpirada = date1.compareTo(date2) < 0;
+
+
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+
+
+
+
+                                nuevaVisita.setCheck_in(visita_checkIn);
+                                nuevaVisita.setCheck_out(visita_checkOut);
+                                nuevaVisita.setCoordinates_lat_in(visita_lat_in);
+                                nuevaVisita.setCoordinates_lon_in(visita_lon_in);
+                                nuevaVisita.setCoordinates_lat_out(visita_lat_out);
+                                nuevaVisita.setCoordinates_lon_out(visita_lon_out);
+                                nuevaVisita.setDate_planned(visita_date_planned);
+                                nuevaVisita.setId(visita_id);
+                                nuevaVisita.setRequirement_id(requerimiento_id);
+                                nuevaVisita.setRequirement_reason(requerimiento_reason);
+                                nuevaVisita.setSchool_address(escuela_direccion);
+                                nuevaVisita.setSchool_ambassador_in(escuela_embajador_in);
+                                nuevaVisita.setSchool_amie(escuela_amie);
+                                nuevaVisita.setSchool_name(escuela_nombre);
+                                nuevaVisita.setSchool_parish(escuela_parroquia);
+                                nuevaVisita.setSchool_reference(escuela_referencia);
+                                if(fechaExpirada){
+                                    nuevaVisita.setState(3);
+
+                                }
+                                else {
+                                    nuevaVisita.setState(visita_estado);
+
+                                }
+                                nuevaVisita.setType(visita_tipo);
+                                nuevaVisita.setUser_type(tipo_usuario);
+                                nuevaVisita.setUser_id(usuario_id);
+                                nuevaVisita.setUsername(usuario_username);
+                                visitasDeFecha.add(nuevaVisita);
+                            }
+
+
+
+
+                        }
+                        if(visitasDeFecha == null){
+                            System.out.println("No hay nada");
+                            errorTextview.setText("No hay visitas que mostrar");
+                            listView.setVisibility(View.GONE);
+                            errorTextview.setVisibility(View.VISIBLE);
+
+                        }
+                        else{
+                            System.out.println("Hay " + visitasDeFecha.size() + " visitas de esta fecha " + fechaEscogida);
+                           visitaAdapter = new VisitaAdapter(getActivity(), visitasDeFecha);
+
+                            listView.setAdapter(visitaAdapter);
+                            errorTextview.setVisibility(View.GONE);
+                            listView.setVisibility(View.VISIBLE);
+                            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                                    Visita visita = visitasDeFecha.get(position);
+
+                                    if(visita.getState() !=3){
+                                        Intent mainIntent = new Intent(getActivity(), DetallesEscuela.class);
+                                        mainIntent.putExtra("visitaActual",visita);
+
+                                        startActivity(mainIntent);
+                                    }
+
+
+
+                                }
+                            });
+
+
+                        }
+
+
+
+                    }
+                    else{
+                        System.out.println("No hay nada");
+                        errorTextview.setText("No hay visitas que mostrar");
+                        listView.setVisibility(View.GONE);
+                        errorTextview.setVisibility(View.VISIBLE);
+
+
+                    }
+
+                }
+                else {
+                    errorTextview.setText("No hay visitas que mostrar");
+                    errorTextview.setVisibility(View.VISIBLE);
+                    listView.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+
+                errorTextview.setText("No hay visitas que mostrar");
+                errorTextview.setVisibility(View.VISIBLE);
+                Toast.makeText(getActivity(), "error :(", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
 
         //Conseguir visitas del API
-
+/*
 
 
 
@@ -332,7 +594,7 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
 
 
 
-
+*/
 
 
 

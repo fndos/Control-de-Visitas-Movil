@@ -369,6 +369,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 if(response.isSuccessful()){
 
                     if(response.body() != null && response.body().getAsJsonArray("objects").size() > 0){
+
+                        /*
                         JsonElement atributosKeyUsuario = response.body().getAsJsonArray("objects").get(0);
                         String usuario = atributosKeyUsuario.getAsJsonObject().get("user_name").toString();
                         String salt = atributosKeyUsuario.getAsJsonObject().get("salt").toString();
@@ -405,19 +407,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                         System.out.println("El password_Login es: " + password_login);
                         System.out.println("El Password_db es: " + user_pwd);
+                                                boolean exito = password_login.equals(user_pwd);
+
+                        */
+
+                        JsonElement atributosKeyUsuario = response.body().getAsJsonArray("objects").get(0);
+                        usuarioId = atributosKeyUsuario.getAsJsonObject().get("id").getAsString();
 
 
-                        boolean exito = password_login.equals(user_pwd);
-
-
-
-
-
-
-
-
-
-                        return exito;
+                        return true;
                     }
                     else{
                         System.out.println("falla la llamada al API");
@@ -446,6 +444,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (success) {
 
+
                 Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
 
                 mainIntent.putExtra("usuario_id",usuarioId);
@@ -459,6 +458,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 // Start the new activity
                 startActivity(mainIntent);
                 finish();
+                System.out.println("Login exitoso");
+
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();

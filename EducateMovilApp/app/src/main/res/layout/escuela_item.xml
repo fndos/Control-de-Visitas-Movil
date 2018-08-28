@@ -364,8 +364,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/accionTomada"
-                android:background="@color/colorPrimary"
-                android:text="CHECK-IN" />
+                android:background="@color/colorPrimary" />
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"

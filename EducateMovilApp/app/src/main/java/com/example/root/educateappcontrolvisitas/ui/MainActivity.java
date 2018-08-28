@@ -1,7 +1,9 @@
 package com.example.root.educateappcontrolvisitas.ui;
 
 import com.example.root.educateappcontrolvisitas.R;
+import com.example.root.educateappcontrolvisitas.api.model.Visita;
 import com.example.root.educateappcontrolvisitas.api.service.UsuariosClient;
+import com.example.root.educateappcontrolvisitas.api.service.VisitasClient;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -29,6 +31,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 import android.content.SharedPreferences;
 
 
@@ -71,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     private String identificadorUsuario;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,59 +100,9 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Usuario nombre: " + mUsername);
         System.out.println("Key usuario(lo uso para obtener el Usuario_id): " + identificadorUsuario);
 
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("http://deveducate.pythonanywhere.com/")
-                .addConverterFactory(GsonConverterFactory.create());
-        Retrofit retrofit = builder.build();
-
-        UsuariosClient usuariosClient = retrofit.create(UsuariosClient.class);
-        Call<JsonObject> call =  usuariosClient.obtenerUsuarioId(identificadorUsuario,mUsername);
-
-        ///////////////////////////////////////
-
-        call.enqueue(new Callback<JsonObject>() {
-            @Override
-            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                if(response.body() != null){
-
-                    if(response.body() != null && response.body().getAsJsonArray("objects").size() > 0){
-                        JsonElement infoUsuario = response.body().getAsJsonArray("objects").get(0);
-
-                        mSectionsPagerAdapter.usuarioID = infoUsuario.getAsJsonObject().get("id").toString();
-                        System.out.println("Esto devuelve del USUARIO");
-                        System.out.println(infoUsuario);
-                        System.out.println("Con este usuario_id busco las visitas: " + mSectionsPagerAdapter.usuarioID);
-
-                    }
-                    else{
-                        System.out.println("No hay nada");
-
-                    }
-
-                }
-                else {
-                    //errorTextview.setText("No hay visitas que mostrar");
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<JsonObject> call, Throwable t) {
-
-                //Toast.makeText(this, "error :(", Toast.LENGTH_SHORT).show();
-
-            }
-        });
 
 
-
-
-
-
-
-
-
-        //mSectionsPagerAdapter.usuarioID = usuario_id;
+        mSectionsPagerAdapter.usuarioID = "";
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -214,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         //Lo uso para buscar visitas
-        String usuarioID;
+        private String usuarioID;
 
         public SectionsPagerAdapter(FragmentManager fm) {
 
@@ -233,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else{
                 return new OtrasVisitasFragment().newInstance(usuarioID);
+
 
 
             }

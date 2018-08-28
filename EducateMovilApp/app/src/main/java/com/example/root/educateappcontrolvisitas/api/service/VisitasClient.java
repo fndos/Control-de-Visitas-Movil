@@ -7,16 +7,34 @@ import com.google.gson.JsonObject;
 
 import java.util.List;
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 
 public interface VisitasClient {
-    @GET("visitas/{date}.json")
-    Call<List<Visita>> obtenerVisitasFecha(@Path("date") String date);
 
-    @GET("api/v1/controlvisita/?format=json")
-    Call<JsonObject> obtenerVisitas(@Query("usuario") String usuario);
+    @GET("serviceweb/api/v1/visit/?format=json")
+    Call<JsonObject> obtenerVisitas(@Query("username") String username,
+                                    @Query("api_key") String api_key);
+
+    @POST("serviceweb/api/v1/visit/?obj_update")
+    @FormUrlEncoded
+    Call<Void> checkIn(@Query("username") String username,
+                       @Query("api_key") String api_key,
+                        @Field("user") String user,
+                        @Field("requirement") String requirement,
+                        @Field("date_planned") String date_planned,
+                        @Field("check_in") String check_in,
+                       @Field("coordinates_lat_in") double coordinates_lat_in,
+                       @Field("coordinates_lon_in") double coordinates_lon_in,
+                       @Field("state") int state,
+                       @Field("type") int type,
+                       @Field("id") int id
+
+                       );
 }
 

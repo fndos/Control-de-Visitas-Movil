@@ -16,7 +16,6 @@ import static androidx.core.content.ContextCompat.getColor;
 
 public class VisitaAdapter extends ArrayAdapter<Visita> {
 
-    private int mColorResourceId;
     private List<Visita> visitas;
 
 
@@ -25,11 +24,9 @@ public class VisitaAdapter extends ArrayAdapter<Visita> {
      *
      * @param context is the current context (i.e. Activity) that the adapter is being created in.
      * @param visitas is the list of  to be displayed.
-     * @param colorResourceId is the resource ID for the background color for this list of words
      */
-    public VisitaAdapter(Context context, List<Visita> visitas, int colorResourceId) {
+    public VisitaAdapter(Context context, List<Visita> visitas) {
         super(context, 0, visitas);
-        mColorResourceId = colorResourceId;
         this.visitas = visitas;
 
     }
@@ -51,30 +48,57 @@ public class VisitaAdapter extends ArrayAdapter<Visita> {
         visita_numero.setText("N°000000190");
 
         TextView visita_hora = (TextView) listItemView.findViewById(R.id.visita_hora);
-        visita_hora.setText(currentVisita.getHora_inicio_visita());
+        visita_hora.setText("00h00");
 
         TextView escuela_MIE = (TextView) listItemView.findViewById(R.id.escuela_MIE);
-        escuela_MIE.setText(currentVisita.getAmie());
+        escuela_MIE.setText(currentVisita.getSchool_amie());
 
         TextView escuela_jornada = (TextView) listItemView.findViewById(R.id.escuela_jornada);
         escuela_jornada.setText("VESPERTINA");
 
         TextView escuela_direccion = (TextView) listItemView.findViewById(R.id.escuela_direccion);
-        escuela_direccion.setText(currentVisita.getDireccion());
+        escuela_direccion.setText(currentVisita.getSchool_address());
 
 
         TextView escuela_nombre = (TextView) listItemView.findViewById(R.id.escuela_nombre);
-        escuela_nombre.setText(currentVisita.getNombreEscuela());
+        escuela_nombre.setText(currentVisita.getSchool_name());
+
+        TextView visita_estado = (TextView) listItemView.findViewById(R.id.visita_estado);
+        int estadoVisita = currentVisita.getState();
+        String[] estadosVisitas = {"","PENDIENTE","REALIZADA","NO REALIZADA"};
+
+        visita_estado.setText(estadosVisitas[estadoVisita]);
+
+
         // Set the theme color for the list item
+
         View textContainer = listItemView.findViewById(R.id.visita_text_container);
         // Find the color that the resource ID maps to
-        int color = getColor(getContext(), mColorResourceId);
 
         // Set the background color of the text container View
-        textContainer.setBackgroundColor(color);
+        int colorBackground;
+
+        switch (estadoVisita){
+            case 1:
+                colorBackground = getColor(getContext(),R.color.tan_background_pendiente);
+                textContainer.setBackgroundColor(colorBackground);
+                break;
+            case 2:
+                colorBackground = getColor(getContext(),R.color.tan_background_realizada);
+                textContainer.setBackgroundColor(colorBackground);
+                break;
+            case 3:
+                colorBackground = getColor(getContext(),R.color.tan_background_no_realizada);
+                textContainer.setBackgroundColor(colorBackground);
+                break;
+
+
+        }
+
 
         // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
         // the ListView.
+
         return listItemView;
     }
 

@@ -19,24 +19,205 @@ public class Visita implements Parcelable {
         }
     };
 
-    private String nombreUsuario;
-    private String apellidoUsuario;
-    private String usuarioID;
 
+     private String check_in;
+      private String check_out;
+      private double coordinates_lat_in;
+      private double coordinates_lat_out;
+      private double coordinates_lon_in;
+      private  double coordinates_lon_out;
+      private String date_planned;
+      private int id;
+      private String observation;
+      private int requirement_id;
+      private String requirement_reason;
+      private String school_address;
+      private String school_ambassador_in;
+      private String school_amie;
+      private String school_name;
+      private String school_parish;
+      private String school_reference;
+      private int state;
+      private int type;
+      private int user_id;
+      private int user_type;
+      private String username;
 
-    private String amie;
-    private String direccion;
-    private String embajador_in;
-    private String nombreEscuela;
-    private String parroquia;
-    private String fecha;
-    private String fecha_visita;
-    private String hora_fin_visita;
-    private String hora_inicio_visita;
-    private String motivo_visita;
-    private String tipo_incidencia_descripcion;
-    private String tipo_seguimiento_descripcion;
-    private String tipo_seguimiento_tipo_estado;
+    public String getCheck_in() {
+        return check_in;
+    }
+
+    public void setCheck_in(String check_in) {
+        this.check_in = check_in;
+    }
+
+    public String getCheck_out() {
+        return check_out;
+    }
+
+    public void setCheck_out(String check_out) {
+        this.check_out = check_out;
+    }
+
+    public double getCoordinates_lat_in() {
+        return coordinates_lat_in;
+    }
+
+    public void setCoordinates_lat_in(double coordinates_lat_in) {
+        this.coordinates_lat_in = coordinates_lat_in;
+    }
+
+    public double getCoordinates_lat_out() {
+        return coordinates_lat_out;
+    }
+
+    public void setCoordinates_lat_out(double coordinates_lat_out) {
+        this.coordinates_lat_out = coordinates_lat_out;
+    }
+
+    public double getCoordinates_lon_in() {
+        return coordinates_lon_in;
+    }
+
+    public void setCoordinates_lon_in(double coordinates_lon_in) {
+        this.coordinates_lon_in = coordinates_lon_in;
+    }
+
+    public double getCoordinates_lon_out() {
+        return coordinates_lon_out;
+    }
+
+    public void setCoordinates_lon_out(double coordinates_lon_out) {
+        this.coordinates_lon_out = coordinates_lon_out;
+    }
+
+    public String getDate_planned() {
+        return date_planned;
+    }
+
+    public void setDate_planned(String date_planned) {
+        this.date_planned = date_planned;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getObservation() {
+        return observation;
+    }
+
+    public void setObservation(String observation) {
+        this.observation = observation;
+    }
+
+    public int getRequirement_id() {
+        return requirement_id;
+    }
+
+    public void setRequirement_id(int requirement_id) {
+        this.requirement_id = requirement_id;
+    }
+
+    public String getRequirement_reason() {
+        return requirement_reason;
+    }
+
+    public void setRequirement_reason(String requirement_reason) {
+        this.requirement_reason = requirement_reason;
+    }
+
+    public String getSchool_address() {
+        return school_address;
+    }
+
+    public void setSchool_address(String school_address) {
+        this.school_address = school_address;
+    }
+
+    public String getSchool_ambassador_in() {
+        return school_ambassador_in;
+    }
+
+    public void setSchool_ambassador_in(String school_ambassador_in) {
+        this.school_ambassador_in = school_ambassador_in;
+    }
+
+    public String getSchool_amie() {
+        return school_amie;
+    }
+
+    public void setSchool_amie(String school_amie) {
+        this.school_amie = school_amie;
+    }
+
+    public String getSchool_name() {
+        return school_name;
+    }
+
+    public void setSchool_name(String school_name) {
+        this.school_name = school_name;
+    }
+
+    public String getSchool_parish() {
+        return school_parish;
+    }
+
+    public void setSchool_parish(String school_parish) {
+        this.school_parish = school_parish;
+    }
+
+    public String getSchool_reference() {
+        return school_reference;
+    }
+
+    public void setSchool_reference(String school_reference) {
+        this.school_reference = school_reference;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    public int getUser_type() {
+        return user_type;
+    }
+
+    public void setUser_type(int user_type) {
+        this.user_type = user_type;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Visita() {
     }
@@ -47,156 +228,38 @@ public class Visita implements Parcelable {
 
     private void readFromParcel(Parcel in) {
 
-        nombreUsuario = in.readString();
-        apellidoUsuario = in.readString();
-        usuarioID = in.readString();
-        amie = in.readString();
-        direccion = in.readString();
-        embajador_in = in.readString();
-        nombreEscuela = in.readString();
-        parroquia = in.readString();
-        fecha = in.readString();
-        fecha_visita = in.readString();
-        hora_fin_visita = in.readString();
-        hora_inicio_visita = in.readString();
-        motivo_visita = in.readString();
-        tipo_incidencia_descripcion = in.readString();
-        tipo_seguimiento_descripcion = in.readString();
-        tipo_seguimiento_tipo_estado = in.readString();
+        check_in = in.readString();
+        coordinates_lat_in = in.readDouble();
+        coordinates_lat_out = in.readDouble();
+        coordinates_lon_in = in.readDouble();
+        coordinates_lon_out = in.readDouble();
+        check_out = in.readString();
+        date_planned = in.readString();
+        id = in.readInt();
+        observation = in.readString();
+        requirement_id = in.readInt();
+        requirement_reason = in.readString();
+        school_address = in.readString();
+        school_ambassador_in = in.readString();
+        school_amie = in.readString();
+        school_name = in.readString();
+        school_parish = in.readString();
+        school_reference = in.readString();
+        state = in.readInt();
+        type = in.readInt();
+        user_id = in.readInt();
+        user_type = in.readInt();
+        username = in.readString();
+
+
+
+
+
 
 
     }
 
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
-    public String getApellidoUsuario() {
-        return apellidoUsuario;
-    }
-
-    public void setApellidoUsuario(String apellidoUsuario) {
-        this.apellidoUsuario = apellidoUsuario;
-    }
-
-    public String getUsuarioID() {
-        return usuarioID;
-    }
-
-    public void setUsuarioID(String usuarioID) {
-        this.usuarioID = usuarioID;
-    }
-
-
-
-    public String getAmie() {
-        return amie;
-    }
-
-    public void setAmie(String amie) {
-        this.amie = amie;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getEmbajador_in() {
-        return embajador_in;
-    }
-
-    public void setEmbajador_in(String embajador_in) {
-        this.embajador_in = embajador_in;
-    }
-
-    public String getNombreEscuela() {
-        return nombreEscuela;
-    }
-
-    public void setNombreEscuela(String nombreEscuela) {
-        this.nombreEscuela = nombreEscuela;
-    }
-
-    public String getParroquia() {
-        return parroquia;
-    }
-
-    public void setParroquia(String parroquia) {
-        this.parroquia = parroquia;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getFecha_visita() {
-        return fecha_visita;
-    }
-
-    public void setFecha_visita(String fecha_visita) {
-        this.fecha_visita = fecha_visita;
-    }
-
-    public String getHora_fin_visita() {
-        return hora_fin_visita;
-    }
-
-    public void setHora_fin_visita(String hora_fin_visita) {
-        this.hora_fin_visita = hora_fin_visita;
-    }
-
-    public String getHora_inicio_visita() {
-        return hora_inicio_visita;
-    }
-
-    public void setHora_inicio_visita(String hora_inicio_visita) {
-        this.hora_inicio_visita = hora_inicio_visita;
-    }
-
-    public String getMotivo_visita() {
-        return motivo_visita;
-    }
-
-    public void setMotivo_visita(String motivo_visita) {
-        this.motivo_visita = motivo_visita;
-    }
-
-    public String getTipo_incidencia_descripcion() {
-        return tipo_incidencia_descripcion;
-    }
-
-    public void setTipo_incidencia_descripcion(String tipo_incidencia_descripcion) {
-        this.tipo_incidencia_descripcion = tipo_incidencia_descripcion;
-    }
-
-    public String getTipo_seguimiento_descripcion() {
-        return tipo_seguimiento_descripcion;
-    }
-
-    public void setTipo_seguimiento_descripcion(String tipo_seguimiento_descripcion) {
-        this.tipo_seguimiento_descripcion = tipo_seguimiento_descripcion;
-    }
-
-    public String getTipo_seguimiento_tipo_estado() {
-        return tipo_seguimiento_tipo_estado;
-    }
-
-    public void setTipo_seguimiento_tipo_estado(String tipo_seguimiento_tipo_estado) {
-        this.tipo_seguimiento_tipo_estado = tipo_seguimiento_tipo_estado;
-    }
 
     @Override
     public int describeContents() {
@@ -206,23 +269,28 @@ public class Visita implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
 
-
-        parcel.writeString(nombreUsuario);
-        parcel.writeString(apellidoUsuario);
-        parcel.writeString(usuarioID);
-        parcel.writeString(amie);
-        parcel.writeString(direccion);
-        parcel.writeString(embajador_in);
-        parcel.writeString(nombreEscuela);
-        parcel.writeString(parroquia);
-        parcel.writeString(fecha);
-        parcel.writeString(fecha_visita);
-        parcel.writeString(hora_fin_visita);
-        parcel.writeString(hora_inicio_visita);
-        parcel.writeString(motivo_visita);
-        parcel.writeString(tipo_incidencia_descripcion);
-        parcel.writeString(tipo_seguimiento_descripcion);
-        parcel.writeString(tipo_seguimiento_tipo_estado);
+                parcel.writeString(check_in);
+        parcel.writeDouble(coordinates_lat_in);
+        parcel.writeDouble(coordinates_lat_out);
+        parcel.writeDouble(coordinates_lon_in);
+        parcel.writeDouble(coordinates_lon_out);
+        parcel.writeString(check_out);
+        parcel.writeString(date_planned);
+        parcel.writeInt(id);
+        parcel.writeString(observation);
+        parcel.writeInt(requirement_id);
+        parcel.writeString(requirement_reason);
+        parcel.writeString(school_address);
+        parcel.writeString(school_ambassador_in);
+        parcel.writeString(school_amie);
+        parcel.writeString(school_name);
+        parcel.writeString(school_parish);
+        parcel.writeString(school_reference);
+        parcel.writeInt(state);
+        parcel.writeInt(type);
+        parcel.writeInt(user_id);
+        parcel.writeInt(user_type);
+        parcel.writeString(username);
 
 
 
