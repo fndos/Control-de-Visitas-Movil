@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.root.educateappcontrolvisitas.R;
+import com.example.root.educateappcontrolvisitas.api.model.Visita;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +26,8 @@ public class EscogerFormularioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_escoger_formulario);
 
 
+        final Visita visita = getIntent().getParcelableExtra("visitaActual");
+
         btnPedagogico = (Button) findViewById(R.id.btn_pedagogico);
         btnTecnico = (Button) findViewById(R.id.btn_tecnico);
         btnAmbos = (Button) findViewById(R.id.btn_ambos);
@@ -34,6 +37,7 @@ public class EscogerFormularioActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent formularioTecnico = new Intent(getApplicationContext(),TecnicoFormularioActivity.class);
+                formularioTecnico.putExtra("visitaActual",visita);
                 startActivity(formularioTecnico);
             }
         });

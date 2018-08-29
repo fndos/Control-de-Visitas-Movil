@@ -49,14 +49,13 @@
 
 
             <Button
-                android:id="@+id/btn_ambos"
-                android:background="@color/colorPrimary"
-                android:layout_gravity="center"
+                android:id="@+id/btn_checkout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:text="NO, CHECK OUT"
-                android:textColor="#ffffff"/>
+                android:background="@color/colorPrimary"
+                android:textColor="#ffffff" />
 
         </LinearLayout>
 

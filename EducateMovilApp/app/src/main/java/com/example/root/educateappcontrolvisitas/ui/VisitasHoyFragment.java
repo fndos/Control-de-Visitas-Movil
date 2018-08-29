@@ -53,6 +53,7 @@ public class VisitasHoyFragment extends Fragment {
     private String usuarioID;
     private List<Visita> visitasDeHoy;
     private List<Visita> todasLasVisitas;
+    TextView errorTextview;
 
 
 
@@ -86,9 +87,9 @@ public class VisitasHoyFragment extends Fragment {
 
         listView = (ListView) rootView.findViewById(R.id.visitaList);
 
-        final TextView errorTextview = (TextView) rootView.findViewById(R.id.errorViewHoy);
-        errorTextview.setVisibility(View.VISIBLE);
-
+        errorTextview = (TextView) rootView.findViewById(R.id.errorViewHoy);
+        //errorTextview.setVisibility(View.VISIBLE);
+        errorTextview.setText("");
 
 
         Date todayDate = Calendar.getInstance().getTime();
@@ -106,7 +107,7 @@ public class VisitasHoyFragment extends Fragment {
         Retrofit retrofit = builder.build();
 
         VisitasClient visitasClient = retrofit.create(VisitasClient.class);
-        Call<JsonObject> call =  visitasClient.obtenerVisitas("system","ABC123456789");
+        Call<JsonObject> call =  visitasClient.obtenerVisitas("system","ABC123456789",100);
         final List<Visita> visitas = new ArrayList<Visita>();
 
         ///////////////////////////////////////
@@ -265,7 +266,7 @@ public class VisitasHoyFragment extends Fragment {
                         }
                         if(visitasDeHoy == null){
                             System.out.println("No hay nada");
-                            errorTextview.setText("No hay visitas que mostrar");
+                            //errorTextview.setText("No hay visitas que mostrar");
                             listView.setVisibility(View.GONE);
                             errorTextview.setVisibility(View.VISIBLE);
 
@@ -273,7 +274,7 @@ public class VisitasHoyFragment extends Fragment {
                         else{
                             System.out.println("Hay "+ visitasDeHoy.size() + " visitas de hoy");
                             listView.setAdapter(new VisitaAdapter(getActivity(), visitasDeHoy));
-                            errorTextview.setVisibility(View.GONE);
+                            errorTextview.setText("");
                             listView.setVisibility(View.VISIBLE);
                             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                 @Override
@@ -298,16 +299,15 @@ public class VisitasHoyFragment extends Fragment {
                     }
                     else{
                         System.out.println("No hay nada");
-                        errorTextview.setText("No hay visitas que mostrar");
                         listView.setVisibility(View.GONE);
-                        errorTextview.setVisibility(View.VISIBLE);
+                        errorTextview.setText("NO HAY VISITAS QUE MOSTRAR");
 
                     }
 
                 }
                 else {
-                    errorTextview.setText("No hay visitas que mostrar");
-                    errorTextview.setVisibility(View.VISIBLE);
+
+                    errorTextview.setText("NO HAY VISITAS QUE MOSTRAR");
                     listView.setVisibility(View.GONE);
                 }
             }
@@ -315,8 +315,7 @@ public class VisitasHoyFragment extends Fragment {
             @Override
             public void onFailure(Call<JsonObject> call, Throwable t) {
 
-                errorTextview.setText("No hay visitas que mostrar");
-                errorTextview.setVisibility(View.VISIBLE);
+                errorTextview.setText("NO HAY VISITAS QUE MOSTRAR");
                 Toast.makeText(getActivity(), "error :(", Toast.LENGTH_SHORT).show();
 
             }

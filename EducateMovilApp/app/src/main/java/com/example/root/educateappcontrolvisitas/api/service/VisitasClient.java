@@ -19,12 +19,14 @@ public interface VisitasClient {
 
     @GET("serviceweb/api/v1/visit/?format=json")
     Call<JsonObject> obtenerVisitas(@Query("username") String username,
-                                    @Query("api_key") String api_key);
+                                    @Query("api_key") String api_key,
+                                    @Query("limit") int limit);
 
     @POST("serviceweb/api/v1/visit/?obj_update")
     @FormUrlEncoded
     Call<Void> checkIn(@Query("username") String username,
                        @Query("api_key") String api_key,
+                       @Query("limit") int limit,
                         @Field("user") String user,
                         @Field("requirement") String requirement,
                         @Field("date_planned") String date_planned,

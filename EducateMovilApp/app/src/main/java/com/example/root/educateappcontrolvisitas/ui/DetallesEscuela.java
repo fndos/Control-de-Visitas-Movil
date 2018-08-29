@@ -124,7 +124,7 @@ public class DetallesEscuela extends AppCompatActivity{// implements OnMapReadyC
                     String requerimientoFK = "/serviceweb/api/v1/requirement/"+visita.getRequirement_id()+ "/";
                     Date todayDate = Calendar.getInstance().getTime();
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                    String fechaHoy = formatter.format(todayDate);
+                    final String fechaHoy = formatter.format(todayDate);
                     getLocation();
 
                     Retrofit.Builder builder = new Retrofit.Builder()
@@ -133,20 +133,23 @@ public class DetallesEscuela extends AppCompatActivity{// implements OnMapReadyC
                     Retrofit retrofit = builder.build();
 
                     VisitasClient visitasClient = retrofit.create(VisitasClient.class);
-                    Call<Void> call =  visitasClient.checkIn("system","ABC123456789",usuarioFK,requerimientoFK,visita.getDate_planned()
+                    Call<Void> call =  visitasClient.checkIn("system","ABC123456789",100,usuarioFK,requerimientoFK,visita.getDate_planned()
                     ,fechaHoy,latitud,longitud,visita.getState(),visita.getType(),visita.getId());
 
                     call.enqueue(new Callback<Void>() {
                         @Override
                         public void onResponse(Call<Void> call, Response<Void> response) {
                             botonCHECKIN.setText("VER FORMULARIOS");
+                            visita.setCheck_in(fechaHoy);
+                            visita.setCoordinates_lat_in(latitud);
+                            visita.setCoordinates_lon_in(longitud);
                             if(visita.getUser_type() == 1 || visita.getUser_type() == 3){
                                 Intent escogerFormularios = new Intent(getApplicationContext(), EscogerFormularioActivity.class);
                                 escogerFormularios.putExtra("visitaActual",visita);
                                 startActivity(escogerFormularios);
                             }
                             else {
-                                Intent formularioTecnico = new Intent(getApplicationContext(), EscogerFormularioActivity.class);
+                                Intent formularioTecnico = new Intent(getApplicationContext(), TecnicoFormularioActivity.class);
                                 formularioTecnico.putExtra("visitaActual",visita);
                                 startActivity(formularioTecnico);
                             }
@@ -161,22 +164,18 @@ public class DetallesEscuela extends AppCompatActivity{// implements OnMapReadyC
                         }
                     });
 
-
-
-
-
-
-                }
-
-                if(visita.getUser_type() == 1 || visita.getUser_type() == 3){
-                    Intent escogerFormularios = new Intent(getApplicationContext(), EscogerFormularioActivity.class);
-                    escogerFormularios.putExtra("visitaActual",visita);
-                    startActivity(escogerFormularios);
                 }
                 else {
-                    Intent formularioTecnico = new Intent(getApplicationContext(), TecnicoFormularioActivity.class);
-                    formularioTecnico.putExtra("visitaActual",visita);
-                    startActivity(formularioTecnico);
+
+                    if (visita.getUser_type() == 1 || visita.getUser_type() == 3) {
+                        Intent escogerFormularios = new Intent(getApplicationContext(), EscogerFormularioActivity.class);
+                        escogerFormularios.putExtra("visitaActual", visita);
+                        startActivity(escogerFormularios);
+                    } else {
+                        Intent formularioTecnico = new Intent(getApplicationContext(), TecnicoFormularioActivity.class);
+                        formularioTecnico.putExtra("visitaActual", visita);
+                        startActivity(formularioTecnico);
+                    }
                 }
             }
         });

@@ -23,6 +23,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,7 +65,8 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
     private TextView errorTextview;
     private View rootView;
     private List<Visita> visitasDeFecha;
-    private List<Visita> todasLasVisitas;
+    private View barraCargando;
+
 
 
     ImageButton selectDate;
@@ -114,6 +116,7 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
             }
         });
 
+        barraCargando = (ProgressBar)rootView.findViewById(R.id.busqueda_otras_visitas_progreso);
 
 
 
@@ -166,8 +169,11 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
         listView = (ListView) rootView.findViewById(R.id.otrasVisitasList);
 
         errorTextview = (TextView) rootView.findViewById(R.id.errorViewOtras);
-        errorTextview.setVisibility(View.VISIBLE);
+        errorTextview.setText("");
         visitasDeFecha = new ArrayList<Visita>();
+        barraCargando.setVisibility(View.VISIBLE);
+        listView.setVisibility(View.GONE);
+
 
 
         Retrofit.Builder builder = new Retrofit.Builder()
@@ -176,7 +182,7 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
         Retrofit retrofit = builder.build();
 
         VisitasClient visitasClient = retrofit.create(VisitasClient.class);
-        Call<JsonObject> call =  visitasClient.obtenerVisitas("system","ABC123456789");
+        Call<JsonObject> call =  visitasClient.obtenerVisitas("system","ABC123456789",100);
 
         ///////////////////////////////////////
 
@@ -193,6 +199,7 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
 
 
                         System.out.println("Hay " + totalVisitas + " visitas en la BD");
+                        barraCargando.setVisibility(View.VISIBLE);
 
 
 
@@ -364,9 +371,10 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
                         }
                         if(visitasDeFecha == null){
                             System.out.println("No hay nada");
-                            errorTextview.setText("No hay visitas que mostrar");
                             listView.setVisibility(View.GONE);
-                            errorTextview.setVisibility(View.VISIBLE);
+                            errorTextview.setText("NO HAY VISITAS QUE MOSTRAR");
+                            barraCargando.setVisibility(View.GONE);
+                            //errorTextview.setVisibility(View.VISIBLE);
 
                         }
                         else{
@@ -374,7 +382,8 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
                            visitaAdapter = new VisitaAdapter(getActivity(), visitasDeFecha);
 
                             listView.setAdapter(visitaAdapter);
-                            errorTextview.setVisibility(View.GONE);
+                            errorTextview.setText("NO HAY VISITAS QUE MOSTRAR");
+                            barraCargando.setVisibility(View.GONE);
                             listView.setVisibility(View.VISIBLE);
                             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                 @Override
@@ -402,9 +411,11 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
                     }
                     else{
                         System.out.println("No hay nada");
-                        errorTextview.setText("No hay visitas que mostrar");
+                        //errorTextview.setText("No hay visitas que mostrar");
                         listView.setVisibility(View.GONE);
-                        errorTextview.setVisibility(View.VISIBLE);
+                        errorTextview.setText("NO HAY VISITAS QUE MOSTRAR");
+                        barraCargando.setVisibility(View.GONE);
+                        //errorTextview.setVisibility(View.VISIBLE);
 
 
                     }
@@ -412,8 +423,9 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
                 }
                 else {
                     errorTextview.setText("No hay visitas que mostrar");
-                    errorTextview.setVisibility(View.VISIBLE);
+                    //errorTextview.setVisibility(View.VISIBLE);
                     listView.setVisibility(View.GONE);
+                    barraCargando.setVisibility(View.GONE);
                 }
             }
 
@@ -421,7 +433,8 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
             public void onFailure(Call<JsonObject> call, Throwable t) {
 
                 errorTextview.setText("No hay visitas que mostrar");
-                errorTextview.setVisibility(View.VISIBLE);
+                barraCargando.setVisibility(View.GONE);
+                //errorTextview.setVisibility(View.VISIBLE);
                 Toast.makeText(getActivity(), "error :(", Toast.LENGTH_SHORT).show();
             }
         });
