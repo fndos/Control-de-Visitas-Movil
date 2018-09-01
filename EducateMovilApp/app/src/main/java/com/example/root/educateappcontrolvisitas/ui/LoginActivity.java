@@ -96,9 +96,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     Retrofit retrofit = builder.build();
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -347,6 +344,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         private final String mEmail;
         private final String mPassword;
         private String usuarioId;
+        private boolean loginExitoso;
 
         UserLoginTask(String email, String password) {
             mEmail = email;
@@ -359,8 +357,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         protected Boolean doInBackground(Void... params)  {
             // TODO: attempt authentication against a network service.
 
+
           UsuariosClient usuariosClient = retrofit.create(UsuariosClient.class);
-          Call<JsonObject> call =  usuariosClient.obtenerNombreUsuario(mEmail);
+
+
+          Call<JsonObject> call =  usuariosClient.login(mEmail,mPassword);
+
 
 
             Response<JsonObject> response = null;
@@ -368,57 +370,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 response = call.execute();
                 if(response.isSuccessful()){
 
-                    if(response.body() != null && response.body().getAsJsonArray("objects").size() > 0){
+                    if(response.body() != null ){
+                        loginExitoso = response.body().getAsJsonObject().get("success").getAsBoolean();
+                        usuarioId = response.body().getAsJsonObject().get("uid").getAsString();
 
-                        /*
-                        JsonElement atributosKeyUsuario = response.body().getAsJsonArray("objects").get(0);
-                        String usuario = atributosKeyUsuario.getAsJsonObject().get("user_name").toString();
-                        String salt = atributosKeyUsuario.getAsJsonObject().get("salt").toString();
-                        salt = salt.substring(1, salt.length()-1);
-                        String user_pwd = atributosKeyUsuario.getAsJsonObject().get("user_pwd").toString();
-                        user_pwd = user_pwd.substring(1,user_pwd.length()-1);
-                        usuarioId = atributosKeyUsuario.getAsJsonObject().get("id").toString();
-
-
-                        System.out.println(atributosKeyUsuario);
-                        System.out.println("El usuario en BD: " +  usuario + " con salt: " + salt + " y user_pwd: "+ user_pwd);
-                        System.out.println("El usuario ingresado: " + mEmail + " con pasword ingresado: "+ mPassword);
-                        System.out.println("El usuario ingresado tiene id: " + usuarioId);
-
-
-                        String parametro = mPassword  + "." + salt;
-                        MessageDigest digest = null;
-                        try {
-                            digest = MessageDigest.getInstance("SHA-256");
-                        } catch (NoSuchAlgorithmException e) {
-                            e.printStackTrace();
-                        }
-                        byte[] encodedhash = digest.digest(
-                                parametro.getBytes("UTF-8"));
-
-                        StringBuffer hexString = new StringBuffer();
-                        for (int i = 0; i < encodedhash.length; i++) {
-                            String hex = Integer.toHexString(0xff & encodedhash[i]);
-                            if(hex.length() == 1) hexString.append('0');
-                            hexString.append(hex);
-                        }
-                        String password_login = hexString.toString();
-
-
-                        System.out.println("El password_Login es: " + password_login);
-                        System.out.println("El Password_db es: " + user_pwd);
-                                                boolean exito = password_login.equals(user_pwd);
-
-                        */
-
-                        JsonElement atributosKeyUsuario = response.body().getAsJsonArray("objects").get(0);
-                        usuarioId = atributosKeyUsuario.getAsJsonObject().get("id").getAsString();
-
-
-                        return true;
+                        return loginExitoso;
                     }
                     else{
-                        System.out.println("falla la llamada al API");
                         return false;
                     }
 
@@ -431,10 +389,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
 
 
-            //TODO: no existe la cuenta, espacio para codigo que realice una futura funcionalidad
-            //TODO: de registro
 
-            return false;
+            return loginExitoso;
         }
 
         @Override
@@ -443,6 +399,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
+
+
+
+                System.out.println("Login exitoso");
+                System.out.println("El id es: " + usuarioId);
+
 
 
                 Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
@@ -458,7 +420,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 // Start the new activity
                 startActivity(mainIntent);
                 finish();
-                System.out.println("Login exitoso");
+
 
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));

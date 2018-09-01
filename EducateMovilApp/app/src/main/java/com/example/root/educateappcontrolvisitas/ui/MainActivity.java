@@ -96,13 +96,16 @@ public class MainActivity extends AppCompatActivity {
         identificadorUsuario = sharedPreferences.getString("usuario_id",null);//intent.getStringExtra("usuario_id");
 
         mUsername = sharedPreferences.getString("usuario_nombre",null);//intent.getStringExtra("usuario_nombre");
+
+
         System.out.println("------------------Usuario ingresado-------------------------- ");
         System.out.println("Usuario nombre: " + mUsername);
         System.out.println("Key usuario(lo uso para obtener el Usuario_id): " + identificadorUsuario);
 
 
 
-        mSectionsPagerAdapter.usuarioID = "";
+
+        mSectionsPagerAdapter.usuarioID = identificadorUsuario;
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -112,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+
+
 
 
 
