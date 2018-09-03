@@ -1,0 +1,82 @@
+
+Tsquid:S1068"1Remove this unused "scrollEscuela" private field.(ª’˜üÿÿÿÿ8•Ù©çÙ,
+Zsquid:S1068"7Remove this unused "labelEscuelaJornada" private field.(‰€„’ıÿÿÿÿ8•Ù©çÙ,
+Tsquid:S1068"6Remove this unused "labelTieneInternet" private field.(Àª´À8•Ù©çÙ,
+Usquid:S1068"2Remove this unused "labelParroquia" private field.(·­ÜÅøÿÿÿÿ8•Ù©çÙ,
+Msquid:S1068"/Remove this unused "labelAsesor" private field.(‘²Ñ¼8•Ù©çÙ,
+Msquid:S1068!"/Remove this unused "labelMotivo" private field.(™¿¢ö8•Ù©çÙ,
+Rsquid:S1068#"4Remove this unused "labelEmbajadorIN" private field.(“ä»8•Ù©çÙ,
+[squid:S1068%"8Remove this unused "labelExtracurricular" private field.(ˆ¨Šûşÿÿÿÿ8•Ù©çÙ,
+\squid:S1068'"9Remove this unused "labelVisitaConTecnico" private field.(†ÔŸÁûÿÿÿÿ8•Ù©çÙ,
+Xsquid:S1068)"5Remove this unused "labelAccionTomada" private field.(ÊÇØÇûÿÿÿÿ8•Ù©çÙ,
+Ksquid:S1068+"-Remove this unused "chbocApci" private field.(‹¼ßÁ8•Ù©çÙ,
+Tsquid:S1068,"1Remove this unused "chboxInternet" private field.(£ãßËüÿÿÿÿ8•Ù©çÙ,
+Tsquid:S1068-"1Remove this unused "chboxSoftware" private field.(Å ¾¬ùÿÿÿÿ8•Ù©çÙ,
+Osquid:S1068."1Remove this unused "chboxHardware" private field.(·©­„8•Ù©çÙ,
+Usquid:S1068/"2Remove this unused "chboxElectrico" private field.(ƒïšÔÿÿÿÿÿ8•Ù©çÙ,
+Psquid:S10680"2Remove this unused "chboxRedesycom" private field.(ÒÁ”à8•Ù©çÙ,
+squid:S1450"\Remove the "scrollEscuela" field and declare it as a local variable in the relevant methods.(ª’˜üÿÿÿÿ8•Ù©çÙ,
+|squid:S1450"YRemove the "visitaHora" field and declare it as a local variable in the relevant methods.(¥µ‹¿øÿÿÿÿ8•Ù©çÙ,
+~squid:S1450"[Remove the "visitaNumero" field and declare it as a local variable in the relevant methods.(Èë•ûÿÿÿÿ8•Ù©çÙ,
+wsquid:S1450"YRemove the "escuelaMIE" field and declare it as a local variable in the relevant methods.(–ëßÕ8•Ù©çÙ,
+ssquid:S1450"URemove the "nombre" field and declare it as a local variable in the relevant methods.(Ş®¶8•Ù©çÙ,
+usquid:S1450"XRemove the "direccion" field and declare it as a local variable in the relevant methods.(í¬¸T8•Ù©çÙ,
+…squid:S1450"bRemove the "labelEscuelaJornada" field and declare it as a local variable in the relevant methods.(‰€„’ıÿÿÿÿ8•Ù©çÙ,
+{squid:S1450"]Remove the "escuelaJornada" field and declare it as a local variable in the relevant methods.(¡Å¹8•Ù©çÙ,
+squid:S1450"aRemove the "labelTieneInternet" field and declare it as a local variable in the relevant methods.(Àª´À8•Ù©çÙ,
+squid:S1450"\Remove the "tieneInternet" field and declare it as a local variable in the relevant methods.(Ë‡ øÿÿÿÿ8•Ù©çÙ,
+€squid:S1450"]Remove the "labelParroquia" field and declare it as a local variable in the relevant methods.(·­ÜÅøÿÿÿÿ8•Ù©çÙ,
+{squid:S1450"XRemove the "parroquia" field and declare it as a local variable in the relevant methods.(é¥õşÿÿÿÿ8•Ù©çÙ,
+xsquid:S1450"ZRemove the "labelAsesor" field and declare it as a local variable in the relevant methods.(‘²Ñ¼8•Ù©çÙ,
+ssquid:S1450 "URemove the "asesor" field and declare it as a local variable in the relevant methods.(ì§Öì8•Ù©çÙ,
+xsquid:S1450!"ZRemove the "labelMotivo" field and declare it as a local variable in the relevant methods.(™¿¢ö8•Ù©çÙ,
+ssquid:S1450""URemove the "motivo" field and declare it as a local variable in the relevant methods.(Ä½™í8•Ù©çÙ,
+}squid:S1450#"_Remove the "labelEmbajadorIN" field and declare it as a local variable in the relevant methods.(“ä»8•Ù©çÙ,
+xsquid:S1450$"ZRemove the "embajadorIN" field and declare it as a local variable in the relevant methods.(œ˜‡Š8•Ù©çÙ,
+†squid:S1450%"cRemove the "labelExtracurricular" field and declare it as a local variable in the relevant methods.(ˆ¨Šûşÿÿÿÿ8•Ù©çÙ,
+|squid:S1450&"^Remove the "extracurricular" field and declare it as a local variable in the relevant methods.(‚”åã8•Ù©çÙ,
+‡squid:S1450'"dRemove the "labelVisitaConTecnico" field and declare it as a local variable in the relevant methods.(†ÔŸÁûÿÿÿÿ8•Ù©çÙ,
+}squid:S1450("_Remove the "visitaConTecnico" field and declare it as a local variable in the relevant methods.(ÓÕõÍ8•Ù©çÙ,
+ƒsquid:S1450)"`Remove the "labelAccionTomada" field and declare it as a local variable in the relevant methods.(ÊÇØÇûÿÿÿÿ8•Ù©çÙ,
+~squid:S1450*"[Remove the "accionTomada" field and declare it as a local variable in the relevant methods.(‹³¹úøÿÿÿÿ8•Ù©çÙ,
+vsquid:S1450+"XRemove the "chbocApci" field and declare it as a local variable in the relevant methods.(‹¼ßÁ8•Ù©çÙ,
+squid:S1450,"\Remove the "chboxInternet" field and declare it as a local variable in the relevant methods.(£ãßËüÿÿÿÿ8•Ù©çÙ,
+squid:S1450-"\Remove the "chboxSoftware" field and declare it as a local variable in the relevant methods.(Å ¾¬ùÿÿÿÿ8•Ù©çÙ,
+zsquid:S1450."\Remove the "chboxHardware" field and declare it as a local variable in the relevant methods.(·©­„8•Ù©çÙ,
+€squid:S1450/"]Remove the "chboxElectrico" field and declare it as a local variable in the relevant methods.(ƒïšÔÿÿÿÿÿ8•Ù©çÙ,
+{squid:S14500"]Remove the "chboxRedesycom" field and declare it as a local variable in the relevant methods.(ÒÁ”à8•Ù©çÙ,
+ysquid:S14501"[Remove the "btnSiguiente" field and declare it as a local variable in the relevant methods.(õ‰İØ8•Ù©çÙ,
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(€üóşÿÿÿÿ8•Ù©çÙ,
+nsquid:CommentedOutCodeLine<"<This block of commented-out lines of code should be removed.(ÆÒ«£úÿÿÿÿ8•Ù©çÙ,
+Psquid:S1905_"-Remove this unnecessary cast to "ScrollView".(¤ĞŒ™ûÿÿÿÿ8•Ù©çÙ,
+Isquid:S1905`"+Remove this unnecessary cast to "TextView".(ñÌÒ¨8•Ù©çÙ,
+Nsquid:S1905b"+Remove this unnecessary cast to "TextView".(‚÷øÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905d"+Remove this unnecessary cast to "TextView".(«“œ®ıÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905f"+Remove this unnecessary cast to "TextView".(€Á†òúÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905h"+Remove this unnecessary cast to "TextView".(ÙâÄõÿÿÿÿÿ8•Ù©çÙ,
+Isquid:S1905j"+Remove this unnecessary cast to "TextView".(ãÓè³8•Ù©çÙ,
+Nsquid:S1905k"+Remove this unnecessary cast to "TextView".(·§ôƒûÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905m"+Remove this unnecessary cast to "TextView".(Ó³ŞÖşÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905n"+Remove this unnecessary cast to "TextView".(‘‹À”ùÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905p"+Remove this unnecessary cast to "TextView".(¨âı™ıÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905q"+Remove this unnecessary cast to "TextView".(æ³È£øÿÿÿÿ8•Ù©çÙ,
+Isquid:S1905s"+Remove this unnecessary cast to "TextView".(­‚èà8•Ù©çÙ,
+Nsquid:S1905t"+Remove this unnecessary cast to "TextView".(„†÷ªùÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905v"+Remove this unnecessary cast to "TextView".(­×Åµıÿÿÿÿ8•Ù©çÙ,
+Isquid:S1905w"+Remove this unnecessary cast to "TextView".(Ìâğ8•Ù©çÙ,
+Nsquid:S1905y"+Remove this unnecessary cast to "TextView".(‘¨ãÉøÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905z"+Remove this unnecessary cast to "TextView".(âÖØøÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905|"+Remove this unnecessary cast to "TextView".(ˆêıµøÿÿÿÿ8•Ù©çÙ,
+Nsquid:S1905}"+Remove this unnecessary cast to "TextView".(ç‚üŒıÿÿÿÿ8•Ù©çÙ,
+Isquid:S1905"+Remove this unnecessary cast to "TextView".(ÔåáÙ8•Ù©çÙ,
+Osquid:S1905€"+Remove this unnecessary cast to "TextView".(Ñºœ¶ÿÿÿÿÿ8•Ù©çÙ,
+Isquid:S1905‚"+Remove this unnecessary cast to "TextView".(÷§=8•Ù©çÙ,
+Jsquid:S1905ƒ"+Remove this unnecessary cast to "TextView".(ÇÏØÎ8•Ù©çÙ,
+Osquid:S1905…"+Remove this unnecessary cast to "CheckBox".(ÇÆôüÿÿÿÿ8•Ù©çÙ,
+Jsquid:S1905†"+Remove this unnecessary cast to "CheckBox".(Â—Õ¬8•Ù©çÙ,
+Isquid:S1905‡"+Remove this unnecessary cast to "CheckBox".(‘Š‹8•Ù©çÙ,
+Osquid:S1905ˆ"+Remove this unnecessary cast to "CheckBox".(Àß¡îùÿÿÿÿ8•Ù©çÙ,
+Jsquid:S1905‰"+Remove this unnecessary cast to "CheckBox".(âÀª¦8•Ù©çÙ,
+Jsquid:S1905Š"+Remove this unnecessary cast to "CheckBox".(ï™Ãı8•Ù©çÙ,
+Msquid:S1905")Remove this unnecessary cast to "Button".(çåÖÚÿÿÿÿÿ8•Ù©çÙ,
+qsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(ıˆ„Ğıÿÿÿÿ8•Ù©çÙ,

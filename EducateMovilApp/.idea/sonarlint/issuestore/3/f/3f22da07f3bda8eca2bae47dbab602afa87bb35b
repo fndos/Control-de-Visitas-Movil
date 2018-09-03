@@ -1,0 +1,75 @@
+
+>squid:S1659"!Declare "mes" on a separate line.(–¨ƒûûÿÿÿÿ
+xsquid:S1192÷"[Define a constant instead of duplicating this literal "NO HAY VISITAS QUE MOSTRAR" 3 times.(Âá¦Âıÿÿÿÿ
+vsquid:S2293­"YReplace the type specification in this constructor call with the diamond operator ("<>").(µ®–äüÿÿÿÿ
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Œ½¾®
+csquid:CommentedOutCodeLineÑ"<This block of commented-out lines of code should be removed.(‰Œûû
+hsquid:CommentedOutCodeLineù"<This block of commented-out lines of code should be removed.(äÎİ™ıÿÿÿÿ
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(èıªÑøÿÿÿÿ
+hsquid:CommentedOutCodeLine¢"<This block of commented-out lines of code should be removed.(äÎİ™ıÿÿÿÿ
+hsquid:CommentedOutCodeLineª"<This block of commented-out lines of code should be removed.(äÎİ™ıÿÿÿÿ
+hsquid:CommentedOutCodeLineµ"<This block of commented-out lines of code should be removed.(äÎİ™ıÿÿÿÿ
+hsquid:CommentedOutCodeLineÃ"<This block of commented-out lines of code should be removed.(§å´ ûÿÿÿÿ
+P
+squid:S106É"9Replace this use of System.out or System.err by a logger.(ÏÃïš
+P
+squid:S106±"9Replace this use of System.out or System.err by a logger.(÷µ”
+U
+squid:S106²"9Replace this use of System.out or System.err by a logger.(ºÙÈÚÿÿÿÿÿ
+U
+squid:S106³"9Replace this use of System.out or System.err by a logger.(¾ÏÈÛüÿÿÿÿ
+U
+squid:S106´"9Replace this use of System.out or System.err by a logger.(ëáçøÿÿÿÿ
+U
+squid:S106¶"9Replace this use of System.out or System.err by a logger.(ÑÀ¨øÿÿÿÿ
+U
+squid:S106õ"9Replace this use of System.out or System.err by a logger.(­÷ÿ§ùÿÿÿÿ
+U
+squid:S106ı"9Replace this use of System.out or System.err by a logger.(şñôøÿÿÿÿ
+U
+squid:S106"9Replace this use of System.out or System.err by a logger.(­÷ÿ§ùÿÿÿÿ
+Jsquid:S1905k".Remove this unnecessary cast to "ImageButton".(Áàô¶øÿÿÿÿ
+Bsquid:S1905l"+Remove this unnecessary cast to "TextView".(¹û÷£
+Jsquid:S1905w".Remove this unnecessary cast to "ProgressBar".(¤é§ƒøÿÿÿÿ
+Hsquid:S1905©"+Remove this unnecessary cast to "ListView".(ÖØñ¯şÿÿÿÿ
+Csquid:S1905«"+Remove this unnecessary cast to "TextView".(Çœéï
+osquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 94 to the 15 allowed.(¾›·ãøÿÿÿÿ
+Esquid:S1185…"(Remove this method to simply inherit it.(º£”úÿÿÿÿ
+hsquid:S00117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù°ñR
+jsquid:S00117Ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Øßş
+jsquid:S00117Õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûĞÿû
+jsquid:S00117×"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤•Ò±
+isquid:S00117Ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áÏÊU
+isquid:S00117á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†÷Ü
+jsquid:S00117ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®«×¶
+jsquid:S00117ë"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á€Ó
+osquid:S00117ó"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖƒŠ øÿÿÿÿ
+osquid:S00117ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦üÖ¿úÿÿÿÿ
+jsquid:S00117û"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áí£È
+osquid:S00117ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Ê¼¯úÿÿÿÿ
+osquid:S00117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Ã² ÿÿÿÿÿ
+osquid:S00117„"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÒåĞøÿÿÿÿ
+jsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨˜Àä
+jsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÅş
+jsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Şã‹
+osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¥õùÿÿÿÿ
+osquid:S00117‘"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥…‹Àÿÿÿÿÿ
+jsquid:S00117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©üÅú
+osquid:S00117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ“Èâøÿÿÿÿ
+jsquid:S00117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä‰æÒ
+osquid:S00117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ÷Àúüÿÿÿÿ
+osquid:S00117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ŸÊÙÿÿÿÿÿ
+osquid:S00117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûò…ôÿÿÿÿÿ
+osquid:S00117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢­Üêıÿÿÿÿ
+osquid:S00117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í¼—üÿÿÿÿ
+jsquid:S00117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷ÇŸâ
+osquid:S00117¢"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åƒì¶ÿÿÿÿÿ
+jsquid:S00117ª"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚûüÊ
+osquid:S00117¬"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Ëéÿÿÿÿÿ
+isquid:S00117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉËÜM
+Xsquid:UselessImportCheck"4Remove this unused import 'android.widget.EditText'.(†Å›Ú
+@squid:S1148Ë"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+>squid:S2129‘"!Remove this "Integer" constructor(Òé…©ıÿÿÿÿ
+>squid:S2129•"!Remove this "Integer" constructor(Òé…©ıÿÿÿÿ
+9squid:S2129›"!Remove this "Integer" constructor(Í²…¿
+9squid:S2129Ÿ"!Remove this "Integer" constructor(Í²…¿

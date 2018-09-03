@@ -1,0 +1,12 @@
+
+Esquid:S1905")Remove this unnecessary cast to "Button".(ÇÌ±”ýÿÿÿÿ
+Esquid:S1905!")Remove this unnecessary cast to "Button".(¶ª®’ÿÿÿÿÿ
+usquid:S1450"YRemove the "btnTecnico" field and declare it as a local variable in the relevant methods.(äÁŒˆúÿÿÿÿ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(€üóþÿÿÿÿ
+Bsquid:S1068",Remove this unused "textView" private field.(ìÊõ"
+Hsquid:S1068"1Remove this unused "btnPedagogico" private field.(Œ¾—Ä
+Hsquid:S1068",Remove this unused "btnAmbos" private field.(ÅÅ…Œúÿÿÿÿ
+ssquid:S1450"WRemove the "btnAmbos" field and declare it as a local variable in the relevant methods.(ÅÅ…Œúÿÿÿÿ
+jsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(Ó›áÆüÿÿÿÿ
+Esquid:S1905 ")Remove this unnecessary cast to "Button".(®ðäùÿÿÿÿ
+ssquid:S1450"\Remove the "btnPedagogico" field and declare it as a local variable in the relevant methods.(Œ¾—Ä

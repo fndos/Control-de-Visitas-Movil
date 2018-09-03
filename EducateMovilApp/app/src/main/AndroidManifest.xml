@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/iconoeducate"
@@ -42,7 +41,21 @@
         <activity android:name=".ui.DetallesEscuela" />
         <activity android:name=".ui.TecnicoFormularioActivity" />
         <activity android:name=".ui.EscogerFormularioActivity" />
-        <activity android:name=".ui.CheckOutActivity"></activity>
+        <activity android:name=".ui.CheckOutActivity" />
+        <activity android:name=".ui.TutorFormularioActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.TutorFormulario">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
