@@ -1,0 +1,73 @@
+
+xsquid:S1192¯"[Define a constant instead of duplicating this literal "NO HAY VISITAS QUE MOSTRAR" 3 times.(Âá¦Âýÿÿÿÿ
+Jsquid:S10687"3Remove this unused "todasLasVisitas" private field.(Í„Ñ³
+psquid:S2293e"YReplace the type specification in this constructor call with the diamond operator ("<>").(ï“ñ“
+usquid:S2293f"YReplace the type specification in this constructor call with the diamond operator ("<>").(‡”Û®øÿÿÿÿ
+usquid:S2293o"YReplace the type specification in this constructor call with the diamond operator ("<>").(Œø¶Àøÿÿÿÿ
+usquid:S14507"^Remove the "todasLasVisitas" field and declare it as a local variable in the relevant methods.(Í„Ñ³
+gsquid:CommentedOutCodeLine["<This block of commented-out lines of code should be removed.(äÎÝ™ýÿÿÿÿ
+csquid:CommentedOutCodeLine…"<This block of commented-out lines of code should be removed.(‰Œûû
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(èýªÑøÿÿÿÿ
+hsquid:CommentedOutCodeLineÐ"<This block of commented-out lines of code should be removed.(§å´ ûÿÿÿÿ
+O
+squid:S106|"9Replace this use of System.out or System.err by a logger.(‘«Ô‰
+O
+squid:S106~"9Replace this use of System.out or System.err by a logger.(ÏÃïš
+P
+squid:S106å"9Replace this use of System.out or System.err by a logger.(÷µ”
+U
+squid:S106æ"9Replace this use of System.out or System.err by a logger.(ºÙÈÚÿÿÿÿÿ
+P
+squid:S106ç"9Replace this use of System.out or System.err by a logger.(š‡¬Ô
+P
+squid:S106è"9Replace this use of System.out or System.err by a logger.(¦Î¤õ
+U
+squid:S106ê"9Replace this use of System.out or System.err by a logger.(€¦‰úÿÿÿÿ
+U
+squid:S106Œ"9Replace this use of System.out or System.err by a logger.(­÷ÿ§ùÿÿÿÿ
+U
+squid:S106“"9Replace this use of System.out or System.err by a logger.(™¹Íˆûÿÿÿÿ
+U
+squid:S106­"9Replace this use of System.out or System.err by a logger.(­÷ÿ§ùÿÿÿÿ
+Gsquid:S1905X"+Remove this unnecessary cast to "ListView".(šÓó¶ÿÿÿÿÿ
+Bsquid:S1905Z"+Remove this unnecessary cast to "TextView".(˜ÈÔ›
+Hsquid:S1481o",Remove this unused "visitas" local variable.(Œø¶Àøÿÿÿÿ
+nsquid:S3776S"RRefactor this method to reduce its Cognitive Complexity from 77 to the 15 allowed.(ËÄ•åûÿÿÿÿ
+Esquid:S1185ó"(Remove this method to simply inherit it.(º£”úÿÿÿÿ
+Wsquid:S1854o";Remove this useless assignment to local variable "visitas".(Œø¶Àøÿÿÿÿ
+nsquid:S00117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥¬Äøÿÿÿÿ
+jsquid:S00117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Øßþž
+jsquid:S00117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÐÿû
+jsquid:S00117‹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤•Ò±
+isquid:S00117Œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áÏÊU
+isquid:S00117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†÷Ü
+jsquid:S00117ž"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®«×¶
+jsquid:S00117Ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁŽ€Ó
+osquid:S00117§"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖƒŠ øÿÿÿÿ
+osquid:S00117¨"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦üÖ¿úÿÿÿÿ
+jsquid:S00117¯"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áí£È
+osquid:S00117°"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Ê¼¯úÿÿÿÿ
+osquid:S00117·"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Ã² ÿÿÿÿÿ
+osquid:S00117¸"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÒåÐøÿÿÿÿ
+jsquid:S00117Á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨˜Àä
+jsquid:S00117Â"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÅþ
+jsquid:S00117Ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Þã‹
+osquid:S00117Ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¥õùÿÿÿÿ
+osquid:S00117Å"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥…‹Àÿÿÿÿÿ
+jsquid:S00117Æ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©üÅú
+osquid:S00117Ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ“Èâøÿÿÿÿ
+jsquid:S00117È"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä‰æÒ
+osquid:S00117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ÷Àúüÿÿÿÿ
+osquid:S00117Ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ŸÊÙÿÿÿÿÿ
+osquid:S00117Ë"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûò…ôÿÿÿÿÿ
+osquid:S00117Ì"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢­Üêýÿÿÿÿ
+osquid:S00117Í"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íž¼—üÿÿÿÿ
+jsquid:S00117Õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷ÇŸâ
+osquid:S00117Ö"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åƒì¶ÿÿÿÿÿ
+jsquid:S00117Þ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚûüÊ
+osquid:S00117à"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ËéŽÿÿÿÿÿ
+isquid:S00117á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉËÜM
+\squid:UselessImportCheck"8Remove this unused import 'java.security.MessageDigest'.(Œð²»
+Ysquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ
+asquid:UselessImportCheck">Remove this unused import 'android.content.SharedPreferences'.(íÎÉr
+lsquid:UselessImportCheck "CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾þÿÿÿÿ
