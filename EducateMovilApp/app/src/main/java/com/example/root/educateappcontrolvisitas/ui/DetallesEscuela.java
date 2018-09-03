@@ -45,7 +45,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class DetallesEscuela extends AppCompatActivity{// implements OnMapReadyCallback {
+public class DetallesEscuela extends AppCompatActivity{
     private GoogleMap mMap;
     private ScrollView mScrollView;
     private String nombresUsuario;
@@ -55,6 +55,8 @@ public class DetallesEscuela extends AppCompatActivity{// implements OnMapReadyC
     private Button botonCHECKIN;
     private double latitud, longitud;
     private GpsTracker gpsTracker;
+    private boolean noSeHaHechoCheckIn = true;
+    private boolean visitaRealizada;
 
 
 
@@ -98,85 +100,116 @@ public class DetallesEscuela extends AppCompatActivity{// implements OnMapReadyC
 
         botonCHECKIN = (Button) findViewById(R.id.botonCHECKIN);
 
-        //final boolean noSeHaHechoCheckIn= visita.getCheck_in().contains("null");
-        final boolean noSeHaHechoCheckIn= visita.getCoordinates_lat_in() == 0.0 && visita.getCoordinates_lon_in() == 0.0;
-        if(noSeHaHechoCheckIn){
-            botonCHECKIN.setText("CHECK IN");
-            try {
-                if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
-                    ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+        noSeHaHechoCheckIn= visita.getCoordinates_lat_in() == 0.0 && visita.getCoordinates_lon_in() == 0.0;
+        visitaRealizada= visita.getState() == 2;
+
+        if(visitaRealizada){
+            botonCHECKIN.setText("VER FORMULARIO");
+
+        }
+        else {
+            if(noSeHaHechoCheckIn){
+                botonCHECKIN.setText("CHECK IN");
+                try {
+                    if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+                        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+                    }
+                } catch (Exception e){
+                    e.printStackTrace();
                 }
-            } catch (Exception e){
-                e.printStackTrace();
             }
+            else{
+                botonCHECKIN.setText("LLENAR FORMULARIO");
+            }
+
         }
-        else{
-            botonCHECKIN.setText("VER FORMULARIOS");
-        }
+
+
 
 
         botonCHECKIN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(noSeHaHechoCheckIn){
-                    //Aqui va el post
-                    String usuarioFK = "/serviceweb/api/v1/usuario/" + visita.getUser_id() + "/";
-                    String requerimientoFK = "/serviceweb/api/v1/requirement/"+visita.getRequirement_id()+ "/";
-                    Date todayDate = Calendar.getInstance().getTime();
-                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                    final String fechaHoy = formatter.format(todayDate);
-                    getLocation();
+                if(visitaRealizada){
+                    //AQUI DEBE MOSTRAR LOS FORMULARIOS QUE SE HAN LLENADO
+                    if(visita.getType() == 2 || visita.getUser_type() == 2 || visita.getUser_type() == 4){//MUESTRA FORMULARIO TECNICO
 
-                    Retrofit.Builder builder = new Retrofit.Builder()
-                            .baseUrl("http://deveducate.pythonanywhere.com/")
-                            .addConverterFactory(GsonConverterFactory.create());
-                    Retrofit retrofit = builder.build();
+                        Intent mostrarFormularioTecnico = new Intent(getApplicationContext(), mostrarFormularioTecnicoActivity.class);
+                        mostrarFormularioTecnico.putExtra("visitaActual",visita);
+                        startActivity(mostrarFormularioTecnico);
+                    }
+                    else{
 
-                    VisitasClient visitasClient = retrofit.create(VisitasClient.class);
-                    Call<Void> call =  visitasClient.checkIn("system","ABC123456789",100,usuarioFK,requerimientoFK,visita.getDate_planned()
-                    ,fechaHoy,latitud,longitud,visita.getState(),visita.getType(),visita.getId());
-
-                    call.enqueue(new Callback<Void>() {
-                        @Override
-                        public void onResponse(Call<Void> call, Response<Void> response) {
-                            botonCHECKIN.setText("VER FORMULARIOS");
-                            visita.setCheck_in(fechaHoy);
-                            visita.setCoordinates_lat_in(latitud);
-                            visita.setCoordinates_lon_in(longitud);
-                            if(visita.getUser_type() == 1 || visita.getUser_type() == 3){
-                                Intent escogerFormularios = new Intent(getApplicationContext(), EscogerFormularioActivity.class);
-                                escogerFormularios.putExtra("visitaActual",visita);
-                                startActivity(escogerFormularios);
-                            }
-                            else {
-                                Intent formularioTecnico = new Intent(getApplicationContext(), TecnicoFormularioActivity.class);
-                                formularioTecnico.putExtra("visitaActual",visita);
-                                startActivity(formularioTecnico);
-                            }
-
-                        }
-
-                        @Override
-                        public void onFailure(Call<Void> call, Throwable t) {
-
-
-
-                        }
-                    });
-
-                }
-                else {
-
-                    if (visita.getUser_type() == 1 || visita.getUser_type() == 3) {
-                        Intent escogerFormularios = new Intent(getApplicationContext(), EscogerFormularioActivity.class);
-                        escogerFormularios.putExtra("visitaActual", visita);
-                        startActivity(escogerFormularios);
-                    } else {
-                        Intent formularioTecnico = new Intent(getApplicationContext(), TecnicoFormularioActivity.class);
-                        formularioTecnico.putExtra("visitaActual", visita);
-                        startActivity(formularioTecnico);
                     }
                 }
+                else{
+
+                    if(noSeHaHechoCheckIn){
+                        //Aqui va el post
+                        String usuarioFK = "/serviceweb/api/v1/usuario/" + visita.getUser_id() + "/";
+                        String requerimientoFK = "/serviceweb/api/v1/requirement/"+visita.getRequirement_id()+ "/";
+                        Date todayDate = Calendar.getInstance().getTime();
+                        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        final String fechaHoy = formatter.format(todayDate);
+                        getLocation();
+
+                        Retrofit.Builder builder = new Retrofit.Builder()
+                                .baseUrl("http://deveducate.pythonanywhere.com/")
+                                .addConverterFactory(GsonConverterFactory.create());
+                        Retrofit retrofit = builder.build();
+
+                        VisitasClient visitasClient = retrofit.create(VisitasClient.class);
+                        Call<Void> call =  visitasClient.checkIn("system","ABC123456789",1000,usuarioFK,requerimientoFK,visita.getDate_planned()
+                                ,fechaHoy,latitud,longitud,visita.getState(),visita.getType(),visita.getId());
+
+                        call.enqueue(new Callback<Void>() {
+                            @Override
+                            public void onResponse(Call<Void> call, Response<Void> response) {
+                                noSeHaHechoCheckIn = false;
+                                botonCHECKIN.setText("LLENAR FORMULARIO");
+                                visita.setCheck_in(fechaHoy);
+                                visita.setCoordinates_lat_in(latitud);
+                                visita.setCoordinates_lon_in(longitud);
+                                if(visita.getUser_type() == 1 || visita.getUser_type() == 3){//TUTOR Y TUTO LEADER PUEDEN LLENAR AMBOS FORMULARIOS
+                                    Intent escogerFormularios = new Intent(getApplicationContext(), EscogerFormularioActivity.class);
+                                    escogerFormularios.putExtra("visitaActual",visita);
+                                    startActivity(escogerFormularios);
+                                }
+                                else {//LOS TECH Y TECH LEADER SOLO PUEDEN LLENAR FORMULARIOS TECNICOS
+                                    visita.setType(2);//el tipo de visita es tecnica(2)
+                                    Intent formularioTecnico = new Intent(getApplicationContext(), TecnicoFormularioActivity.class);
+                                    formularioTecnico.putExtra("visitaActual",visita);
+                                    startActivity(formularioTecnico);
+                                }
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<Void> call, Throwable t) {
+
+
+
+                            }
+                        });
+
+                    }
+                    else {
+
+                        if (visita.getUser_type() == 1 || visita.getUser_type() == 3) {
+                            Intent escogerFormularios = new Intent(getApplicationContext(), EscogerFormularioActivity.class);
+                            escogerFormularios.putExtra("visitaActual", visita);
+                            startActivity(escogerFormularios);
+                        } else {
+                            Intent formularioTecnico = new Intent(getApplicationContext(), TecnicoFormularioActivity.class);
+                            formularioTecnico.putExtra("visitaActual", visita);
+                            startActivity(formularioTecnico);
+                        }
+                    }
+
+                }
+
+
+
             }
         });
 
@@ -189,9 +222,8 @@ public class DetallesEscuela extends AppCompatActivity{// implements OnMapReadyC
                 {
                     mMap = googleMap;
                     mMap.setMinZoomPreference(19);
-                    //mMap.setMaxZoomPreference(20);
-                    //escuelita coordinates
-                    LatLng escuelita = getLocationFromAddress(visita.getSchool_address());//= new LatLng(-2.101717, -79.926966);
+
+                    LatLng escuelita = getLocationFromAddress(visita.getSchool_address());
                     mMap.addMarker(new MarkerOptions().position(escuelita).title(visita.getSchool_name()));
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(escuelita));
                     mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);

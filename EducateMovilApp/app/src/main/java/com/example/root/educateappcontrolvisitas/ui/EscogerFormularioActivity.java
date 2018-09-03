@@ -36,6 +36,7 @@ public class EscogerFormularioActivity extends AppCompatActivity {
         btnTecnico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                visita.setType(2);
                 Intent formularioTecnico = new Intent(getApplicationContext(),TecnicoFormularioActivity.class);
                 formularioTecnico.putExtra("visitaActual",visita);
                 startActivity(formularioTecnico);

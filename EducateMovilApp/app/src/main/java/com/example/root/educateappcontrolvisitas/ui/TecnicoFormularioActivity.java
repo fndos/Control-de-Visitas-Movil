@@ -6,15 +6,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.root.educateappcontrolvisitas.R;
 import com.example.root.educateappcontrolvisitas.api.model.Visita;
+import com.example.root.educateappcontrolvisitas.api.service.formularioTecnicoClient;
 
 import androidx.appcompat.app.AppCompatActivity;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TecnicoFormularioActivity extends AppCompatActivity {
+    @Override
+    public void onBackPressed() {
+        return;
+    }
 
     private ScrollView scrollEscuela;
     private TextView visitaHora;
@@ -38,8 +49,8 @@ public class TecnicoFormularioActivity extends AppCompatActivity {
     private TextView extracurricular;
     private TextView labelVisitaConTecnico;
     private TextView visitaConTecnico;
-    private TextView labelAccionTomada;
-    private TextView accionTomada;
+    private TextView labelAccion;
+    private TextView accion;
     private CheckBox chbocApci;
     private CheckBox chboxInternet;
     private CheckBox chboxSoftware;
@@ -47,50 +58,15 @@ public class TecnicoFormularioActivity extends AppCompatActivity {
     private CheckBox chboxElectrico;
     private CheckBox chboxRedesycom;
     private Button btnSiguiente;
+    private Button btnCancelar;
+    private EditText observaciones;
+    private EditText accionTomada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tecnico_formulario);
         final Visita visita = getIntent().getParcelableExtra("visitaActual");
-
-
-        /*
-
-        TextView visita_escuela_hora = (TextView) findViewById(R.id.visita_hora);
-        visita_escuela_hora.setText("00h00");
-        TextView visita_escuela_numero = (TextView) findViewById(R.id.visita_numero);
-        visita_escuela_numero.setText("N°000000293");
-        TextView visita_escuela_MIE = (TextView) findViewById(R.id.escuela_MIE);
-        visita_escuela_MIE.setText(visita.getSchool_amie());
-        TextView visita_escuela_nombre = (TextView) findViewById(R.id.nombre);
-        visita_escuela_nombre.setText(visita.getSchool_name());
-        TextView visita_escuela_direccion = (TextView) findViewById(R.id.direccion);
-        visita_escuela_direccion.setText(visita.getSchool_address());
-        TextView visita_escuela_jornada = (TextView) findViewById(R.id.escuela_jornada);
-        visita_escuela_jornada.setText("VESPERTINA");
-        TextView visita_escuela_internet = (TextView) findViewById(R.id.tieneInternet);
-        visita_escuela_internet.setText("SI");
-        TextView visita_escuela_parroquia = (TextView) findViewById(R.id.parroquia);
-        visita_escuela_parroquia.setText(visita.getSchool_parish());
-        TextView visita_escuela_asesor = (TextView) findViewById(R.id.asesor);
-        visita_escuela_asesor.setText("N/A");
-        TextView visita_escuela_motivo = (TextView) findViewById(R.id.motivo);
-        visita_escuela_motivo.setText(visita.getRequirement_reason());
-        TextView visita_escuela_embajadorIN = (TextView) findViewById(R.id.embajadorIN);
-        visita_escuela_embajadorIN.setText(visita.getSchool_ambassador_in());
-        TextView visita_escuela_extracurricular = (TextView) findViewById(R.id.extracurricular);
-        visita_escuela_extracurricular.setText("N/A");
-        TextView visita_escuela_conTecnico = (TextView) findViewById(R.id.visitaConTecnico);
-        visita_escuela_conTecnico.setText("N/A");
-        TextView visita_escuela_accionTomada = (TextView) findViewById(R.id.accionTomada);
-        visita_escuela_accionTomada.setText("N/A");
-
-
-
-         */
-
-
 
         scrollEscuela = (ScrollView) findViewById(R.id.scrollEscuela);
         visitaHora = (TextView) findViewById(R.id.visita_hora);
@@ -127,25 +103,120 @@ public class TecnicoFormularioActivity extends AppCompatActivity {
         labelVisitaConTecnico = (TextView) findViewById(R.id.labelVisitaConTecnico);
         visitaConTecnico = (TextView) findViewById(R.id.visitaConTecnico);
         visitaConTecnico.setText("N/A");
-        labelAccionTomada = (TextView) findViewById(R.id.labelAccionTomada);
-        accionTomada = (TextView) findViewById(R.id.accionTomada);
-        accionTomada.setText("N/A");
+        labelAccion = (TextView) findViewById(R.id.labelAccion);
+        accion = (TextView) findViewById(R.id.accion);
+        accion.setText("N/A");
         chbocApci = (CheckBox) findViewById(R.id.chboc_apci);
         chboxInternet = (CheckBox) findViewById(R.id.chbox_internet);
         chboxSoftware = (CheckBox) findViewById(R.id.chbox_software);
         chboxHardware = (CheckBox) findViewById(R.id.chbox_hardware);
         chboxElectrico = (CheckBox) findViewById(R.id.chbox_electrico);
         chboxRedesycom = (CheckBox) findViewById(R.id.chbox_redesycom);
+        observaciones = (EditText) findViewById(R.id.observaciones);
+        accionTomada = (EditText) findViewById(R.id.accionTomada);
 
 
         btnSiguiente = (Button) findViewById(R.id.btn_siguiente);
+        btnCancelar = (Button)findViewById(R.id.btn_cancelar);
+
+
+
+
+
+
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent checkOutIntent = new Intent(getApplicationContext(), CheckOutActivity.class);
-                checkOutIntent.putExtra("visitaActual",visita);
-                startActivity(checkOutIntent);
+                String observacion = observaciones.getText().toString();
+                String acciontomada = accionTomada.getText().toString();
+                String id = "/serviceweb/api/v1/visit/" + visita.getId() + "/";
+
+                Retrofit.Builder builder = new Retrofit.Builder()
+                        .baseUrl("http://deveducate.pythonanywhere.com/")
+                        .addConverterFactory(GsonConverterFactory.create());
+                Retrofit retrofit = builder.build();
+
+                formularioTecnicoClient formularioTecnicoClient = retrofit.create(formularioTecnicoClient.class);
+
+                String apci,electrico,hardware,internet,redes,software;
+                if(chbocApci.isChecked()){
+                    apci = "True";
+
+                }
+                else{
+                    apci = "False";
+                }
+                if(chboxElectrico.isChecked()){
+                    electrico = "True";
+
+                }
+                else{
+                    electrico = "False";
+                }
+                if(chboxHardware.isChecked()){
+                    hardware = "True";
+
+                }
+                else{
+                    hardware = "False";
+                }
+                if(chboxInternet.isChecked()){
+                    internet = "True";
+
+                }
+                else{
+                    internet = "False";
+                }
+                if(chboxRedesycom.isChecked()){
+                    redes = "True";
+
+                }
+                else{
+                    redes = "False";
+                }
+                if(chboxSoftware.isChecked()){
+                    software = "True";
+
+                }
+                else{
+                    software = "False";
+                }
+
+                Call<Void> call = formularioTecnicoClient.guardarFormulario("system","ABC123456789",1000,id,acciontomada,observacion,apci
+                        ,electrico,hardware,internet,redes,software);
+
+                call.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        Intent checkOutIntent = new Intent(getApplicationContext(), CheckOutActivity.class);
+                        checkOutIntent.putExtra("visitaActual",visita);
+                        startActivity(checkOutIntent);
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+
+
+
+                    }
+                });
+
+
+
+
+
+            }
+        });
+
+
+
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TecnicoFormularioActivity.this,MainActivity.class));
+                finish();
             }
         });
 
