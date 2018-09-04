@@ -1,39 +1,38 @@
 
-€squid:S14502"dRemove the "mSectionsPagerAdapter" field and declare it as a local variable in the relevant methods.(ÝÅýþÿÿÿÿ
-usquid:S1450>"YRemove the "mViewPager" field and declare it as a local variable in the relevant methods.(Õîµýúÿÿÿÿ
-hsquid:S1301”"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ
-gsquid:CommentedOutCodeLine]"<This block of commented-out lines of code should be removed.(°¸ô‹üÿÿÿÿ
-asquid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(ÿð÷J
-gsquid:CommentedOutCodeLineb"<This block of commented-out lines of code should be removed.(é¦™‘øÿÿÿÿ
-hsquid:CommentedOutCodeLine–"<This block of commented-out lines of code should be removed.(—Ú¥ƒÿÿÿÿÿ
-O
-squid:S106e"9Replace this use of System.out or System.err by a logger.(ð¡Žô
-O
-squid:S106f"9Replace this use of System.out or System.err by a logger.(ÜÛ¡Ï
+…squid:S1450"dRemove the "mSectionsPagerAdapter" field and declare it as a local variable in the relevant methods.(ÝÅýþÿÿÿÿ8×¨Ç˜Ú,
+zsquid:S1450"YRemove the "mViewPager" field and declare it as a local variable in the relevant methods.(Õîµýúÿÿÿÿ8×¨Ç˜Ú,
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ8×¨Ç˜Ú,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(°¸ô‹üÿÿÿÿ8×¨Ç˜Ú,
+fsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÿð÷J8×¨Ç˜Ú,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(é¦™‘øÿÿÿÿ8×¨Ç˜Ú,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(—Ú¥ƒÿÿÿÿÿ8×¨Ç˜Ú,
 T
-squid:S106g"9Replace this use of System.out or System.err by a logger.(ìŒýÐýÿÿÿÿ
-Fsquid:S1905V"*Remove this unnecessary cast to "Toolbar".(ªü–ýÿÿÿÿ
-Hsquid:S1905o",Remove this unnecessary cast to "ViewPager".(—¯¢•ûÿÿÿÿ
-Csquid:S1905r",Remove this unnecessary cast to "TabLayout".(éÍíà
-Rsquid:S2209À"5Change this instance-reference to a static reference.(—÷Ì÷úÿÿÿÿ
-Rsquid:S2209Ã"5Change this instance-reference to a static reference.(‚àýœüÿÿÿÿ
-ksquid:S001007"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äý ¸ýÿÿÿÿ
-rsquid:S001165"URename this field "usuario_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä²™‡øÿÿÿÿ
-[squid:UselessImportCheck
-"7Remove this unused import 'com.google.gson.JsonObject'.(µÊ´½
-Vsquid:UselessImportCheck!"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ
-\squid:UselessImportCheck"8Remove this unused import 'androidx.annotation.NonNull'.(ˆÛúÜ
-Ssquid:UselessImportCheck"/Remove this unused import 'retrofit2.Response'.(¾éçï
-„squid:UselessImportCheck"`Remove this unused import 'com.example.root.educateappcontrolvisitas.api.service.VisitasClient'.(¦ìä
-Tsquid:UselessImportCheck "0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
-\squid:UselessImportCheck	"8Remove this unused import 'com.google.gson.JsonElement'.(ð†˜³
-…squid:UselessImportCheck"aRemove this unused import 'com.example.root.educateappcontrolvisitas.api.service.UsuariosClient'.(‘±—
-Zsquid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ
-ssquid:UselessImportCheck"JRemove this unused import 'retrofit2.converter.gson.GsonConverterFactory'.(ì§¤¹ÿÿÿÿÿ
-Ssquid:UselessImportCheck"/Remove this unused import 'retrofit2.Retrofit'.(ŠÐÝ
-€squid:UselessImportCheck"WRemove this unused import 'com.example.root.educateappcontrolvisitas.api.model.Visita'.(«ÛÝÝûÿÿÿÿ
-Zsquid:UselessImportCheck"6Remove this unused import 'com.google.gson.JsonArray'.(ÎöêŠ
-Tsquid:UselessImportCheck""+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-Rsquid:UselessImportCheck"/Remove this unused import 'retrofit2.Callback'.(ž›¨,
-Osquid:UselessImportCheck"+Remove this unused import 'retrofit2.Call'.(Çö÷›
-esquid:MaximumInheritanceDepth("<This class has 8 parents which is greater than 5 authorized.(²Ú±Ž
+squid:S106"9Replace this use of System.out or System.err by a logger.(ð¡Žô8×¨Ç˜Ú,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÜÛ¡Ï8×¨Ç˜Ú,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ìŒýÐýÿÿÿÿ8×¨Ç˜Ú,
+Ksquid:S1905"*Remove this unnecessary cast to "Toolbar".(ªü–ýÿÿÿÿ8×¨Ç˜Ú,
+Msquid:S1905",Remove this unnecessary cast to "ViewPager".(—¯¢•ûÿÿÿÿ8×¨Ç˜Ú,
+Hsquid:S1905",Remove this unnecessary cast to "TabLayout".(éÍíà8×¨Ç˜Ú,
+Vsquid:S2209"5Change this instance-reference to a static reference.(—÷Ì÷úÿÿÿÿ8×¨Ç˜Ú,
+Vsquid:S2209"5Change this instance-reference to a static reference.(‚àýœüÿÿÿÿ8×¨Ç˜Ú,
+psquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äý ¸ýÿÿÿÿ8×¨Ç˜Ú,
+wsquid:S00116"URename this field "usuario_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä²™‡øÿÿÿÿ8×¨Ç˜Ú,
+`squid:UselessImportCheck"7Remove this unused import 'com.google.gson.JsonObject'.(µÊ´½8×¨Ç˜Ú,
+[squid:UselessImportCheck"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8×¨Ç˜Ú,
+asquid:UselessImportCheck"8Remove this unused import 'androidx.annotation.NonNull'.(ˆÛúÜ8×¨Ç˜Ú,
+Xsquid:UselessImportCheck"/Remove this unused import 'retrofit2.Response'.(¾éçï8×¨Ç˜Ú,
+‰squid:UselessImportCheck"`Remove this unused import 'com.example.root.educateappcontrolvisitas.api.service.VisitasClient'.(¦ìä8×¨Ç˜Ú,
+Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8×¨Ç˜Ú,
+asquid:UselessImportCheck"8Remove this unused import 'com.google.gson.JsonElement'.(ð†˜³8×¨Ç˜Ú,
+Šsquid:UselessImportCheck"aRemove this unused import 'com.example.root.educateappcontrolvisitas.api.service.UsuariosClient'.(‘±—8×¨Ç˜Ú,
+_squid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8×¨Ç˜Ú,
+xsquid:UselessImportCheck"JRemove this unused import 'retrofit2.converter.gson.GsonConverterFactory'.(ì§¤¹ÿÿÿÿÿ8×¨Ç˜Ú,
+Xsquid:UselessImportCheck"/Remove this unused import 'retrofit2.Retrofit'.(ŠÐÝ8×¨Ç˜Ú,
+…squid:UselessImportCheck"WRemove this unused import 'com.example.root.educateappcontrolvisitas.api.model.Visita'.(«ÛÝÝûÿÿÿÿ8×¨Ç˜Ú,
+_squid:UselessImportCheck"6Remove this unused import 'com.google.gson.JsonArray'.(ÎöêŠ8×¨Ç˜Ú,
+Ysquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8×¨Ç˜Ú,
+Wsquid:UselessImportCheck"/Remove this unused import 'retrofit2.Callback'.(ž›¨,8×¨Ç˜Ú,
+Tsquid:UselessImportCheck"+Remove this unused import 'retrofit2.Call'.(Çö÷›8×¨Ç˜Ú,
+jsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(²Ú±Ž8×¨Ç˜Ú,

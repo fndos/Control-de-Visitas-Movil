@@ -1,0 +1,102 @@
+
+Nsquid:S1905"-Remove this unnecessary cast to "ScrollView".(¤ĞŒ™ûÿÿÿÿ8æøÂ—Ú,
+isquid:S1192"HDefine a constant instead of duplicating this literal "Ninguna" 5 times.(Ê¬¸úÿÿÿÿ8æøÂ—Ú,
+qsquid:S1450"URemove the "nombre" field and declare it as a local variable in the relevant methods.(Ş®¶8æøÂ—Ú,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ñø…ü8æøÂ—Ú,
+S
+squid:S106"9Replace this use of System.out or System.err by a logger.(§€ú_8æøÂ—Ú,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(¨çÀùÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(ÙâÄõÿÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(…¸û¼şÿÿÿÿ8æøÂ—Ú,
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ë–³úÿÿÿÿ8æøÂ—Ú,
+Gsquid:S1905"+Remove this unnecessary cast to "TextView".(—‹Éú8æøÂ—Ú,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ÿ 8æøÂ—Ú,
+|squid:S1450"[Remove the "visitaNumero" field and declare it as a local variable in the relevant methods.(Èë•ûÿÿÿÿ8æøÂ—Ú,
+>squid:S1659""Declare "act2" on a separate line.(‰Üü8æøÂ—Ú,
+vsquid:S1450"URemove the "accion" field and declare it as a local variable in the relevant methods.(ƒªùÿÿÿÿ8æøÂ—Ú,
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÆßìøÿÿÿÿ8æøÂ—Ú,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(èõô8æøÂ—Ú,
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¢†‹øÿÿÿÿ8æøÂ—Ú,
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô•Ïëÿÿÿÿÿ8æøÂ—Ú,
+osquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(ŠÀ·âøÿÿÿÿ8æøÂ—Ú,
+Osquid:S1905".Remove this unnecessary cast to "ProgressBar".(û¬İÿÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(âÖØøÿÿÿÿ8æøÂ—Ú,
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ë×ÌĞûÿÿÿÿ8æøÂ—Ú,
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜èª‰ıÿÿÿÿ8æøÂ—Ú,
+Bsquid:S1659"&Declare "hardware" on a separate line.(Ş¸¾í8æøÂ—Ú,
+>squid:S1659""Declare "act5" on a separate line.(‰Üü8æøÂ—Ú,
+ysquid:S1450"]Remove the "escuelaJornada" field and declare it as a local variable in the relevant methods.(¡Å¹8æøÂ—Ú,
+}squid:S1450"\Remove the "tieneInternet" field and declare it as a local variable in the relevant methods.(Ë‡ øÿÿÿÿ8æøÂ—Ú,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ƒÒ¦8æøÂ—Ú,
+?squid:S1659"#Declare "redes" on a separate line.(Ş¸¾í8æøÂ—Ú,
+Gsquid:S1905"+Remove this unnecessary cast to "TextView".(Ìâğ8æøÂ—Ú,
+_squid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8æøÂ—Ú,
+zsquid:S1450"^Remove the "extracurricular" field and declare it as a local variable in the relevant methods.(‚”åã8æøÂ—Ú,
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒªÚ¯8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(„†÷ªùÿÿÿÿ8æøÂ—Ú,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(¨çÀùÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(ÎÉ…ıÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(ç‚üŒıÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(«“œ®ıÿÿÿÿ8æøÂ—Ú,
+{squid:S1450"_Remove the "visitaConTecnico" field and declare it as a local variable in the relevant methods.(ÓÕõÍ8æøÂ—Ú,
+vsquid:S1450"ZRemove the "embajadorIN" field and declare it as a local variable in the relevant methods.(œ˜‡Š8æøÂ—Ú,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ßÇ™8æøÂ—Ú,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(½äã¦şÿÿÿÿ8æøÂ—Ú,
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰øÂçıÿÿÿÿ8æøÂ—Ú,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(É±²Ò8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(¡–œûÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(‘‹À”ùÿÿÿÿ8æøÂ—Ú,
+Gsquid:S1905"+Remove this unnecessary cast to "TextView".(ÀÑÍù8æøÂ—Ú,
+}squid:S1450"\Remove the "scrollEscuela" field and declare it as a local variable in the relevant methods.(ª’˜üÿÿÿÿ8æøÂ—Ú,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(›‹²ß8æøÂ—Ú,
+osquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ŠÀ·âøÿÿÿÿ8æøÂ—Ú,
+usquid:S1450"YRemove the "escuelaMIE" field and declare it as a local variable in the relevant methods.(–ëßÕ8æøÂ—Ú,
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛóÕ–8æøÂ—Ú,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(Êºš÷ùÿÿÿÿ8æøÂ—Ú,
+qsquid:S1450"URemove the "asesor" field and declare it as a local variable in the relevant methods.(ì§Öì8æøÂ—Ú,
+ysquid:S1450"XRemove the "parroquia" field and declare it as a local variable in the relevant methods.(é¥õşÿÿÿÿ8æøÂ—Ú,
+Bsquid:S1659"&Declare "software" on a separate line.(Ş¸¾í8æøÂ—Ú,
+Rsquid:S1068"1Remove this unused "scrollEscuela" private field.(ª’˜üÿÿÿÿ8æøÂ—Ú,
+Csquid:S1659"'Declare "electrico" on a separate line.(Ş¸¾í8æøÂ—Ú,
+>squid:S1659""Declare "act3" on a separate line.(‰Üü8æøÂ—Ú,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(¨âšÕşÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(·§ôƒûÿÿÿÿ8æøÂ—Ú,
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(“á›²8æøÂ—Ú,
+qsquid:S1450"URemove the "motivo" field and declare it as a local variable in the relevant methods.(Ä½™í8æøÂ—Ú,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(àÚ îøÿÿÿÿ8æøÂ—Ú,
+Bsquid:S1659"&Declare "internet" on a separate line.(Ş¸¾í8æøÂ—Ú,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ßô•ò8æøÂ—Ú,
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ‹ÂŞ8æøÂ—Ú,
+xsquid:S1450"\Remove the "fechaCheckout" field and declare it as a local variable in the relevant methods.(•ıì¡8æøÂ—Ú,
+ssquid:S1450"XRemove the "direccion" field and declare it as a local variable in the relevant methods.(í¬¸T8æøÂ—Ú,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(É±²Ò8æøÂ—Ú,
+lsquid:HiddenFieldCheck"@Rename "accionTomada" which hides the field declared at line 46.(‚óŠ‹şÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(æ³È£øÿÿÿÿ8æøÂ—Ú,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ïÆš¶ıÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(Ñºœ¶ÿÿÿÿÿ8æøÂ—Ú,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ïÆš¶ıÿÿÿÿ8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(‚÷øÿÿÿÿ8æøÂ—Ú,
+tsquid:S3776"SRefactor this method to reduce its Cognitive Complexity from 156 to the 15 allowed.(¨Œşÿÿÿÿ8æøÂ—Ú,
+>squid:S1659""Declare "act4" on a separate line.(‰Üü8æøÂ—Ú,
+msquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò×½c8æøÂ—Ú,
+Lsquid:S1905"+Remove this unnecessary cast to "TextView".(€Á†òúÿÿÿÿ8æøÂ—Ú,
+>squid:S1659""Declare "act6" on a separate line.(‰Üü8æøÂ—Ú,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(çößùùÿÿÿÿ8æøÂ—Ú,

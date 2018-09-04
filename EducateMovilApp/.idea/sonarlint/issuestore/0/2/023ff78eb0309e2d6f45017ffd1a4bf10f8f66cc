@@ -1,2 +1,6 @@
 
-lsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(…îÍƒ8˜ÉÅæÙ,
+jsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(…îÍƒ8˜ÉÅæÙ,
+Tsquid:S1481"3Remove this unused "formTutorPartA" local variable.(ÒÃÏûÿÿÿÿ8›š‘•Ú,
+Psquid:S1481"4Remove this unused "fragmentManager" local variable.(âÏ²¹8›š‘•Ú,
+_squid:S1854"CRemove this useless assignment to local variable "fragmentManager".(âÏ²¹8›š‘•Ú,
+csquid:S1854"BRemove this useless assignment to local variable "formTutorPartA".(ÒÃÏûÿÿÿÿ8›š‘•Ú,

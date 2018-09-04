@@ -1,37 +1,37 @@
 
-Ysquid:S2386É"5Move "PROJECTION" to a class and lower its visibility(‡ÎÌÑùÿÿÿÿ8ÍÚ†æÙ,
-Zsquid:S1905h"7Remove this unnecessary cast to "AutoCompleteTextView".(À˜‚ìşÿÿÿÿ8ÍÚ†æÙ,
-Ksquid:S1068Y"-Remove this unused "usuarioId" private field.(µ¿’¼8ÍÚ†æÙ,
-Fsquid:S1214È""Move constants to a class or enum.(×™´ªùÿÿÿÿ8ÍÚ†æÙ,
-esquid:UselessImportCheck2":Remove this unused import 'java.security.DigestException'.(åÔÆÌ8ÍÚ†æÙ,
-Gsquid:S1905w")Remove this unnecessary cast to "Button".(åà³¸8ÍÚ†æÙ,
-`squid:UselessImportCheck/"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8ÍÚ†æÙ,
-asquid:UselessImportCheck-"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8ÍÚ†æÙ,
-\
-squid:S106–"9Replace this use of System.out or System.err by a logger.(‹ş«Éüÿÿÿÿ8ÍÚ†æÙ,
-\
-squid:S106•"9Replace this use of System.out or System.err by a logger.(üşÃ™ûÿÿÿÿ8ÍÚ†æÙ,
-fsquid:CallToDeprecatedMethodE"7Remove this use of "LoaderCallbacks"; it is deprecated.(ôã©Ö8ÍÚ†æÙ,
-¥squid:S1186º"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ô¬ı¶ùÿÿÿÿ8ÍÚ†æÙ,
-Isquid:S1905k"+Remove this unnecessary cast to "EditText".(÷Î§ò8ÍÚ†æÙ,
-Tsquid:S1068X"1Remove this unused "nombreUsuario" private field.(ùæ˜›úÿÿÿÿ8ÍÚ†æÙ,
-Qsquid:S1135ô"2Complete the task associated to this TODO comment.(¼í 8ÍÚ†æÙ,
-asquid:UselessImportCheck"6Remove this unused import 'com.google.gson.JsonArray'.(ÎöêŠ8ÍÚ†æÙ,
-Ssquid:S1066´"/Merge this if statement with the enclosing one.(¿±Ïßüÿÿÿÿ8ÍÚ†æÙ,
-dsquid:CallToDeprecatedMethod"4Remove this use of "CursorLoader"; it is deprecated.(ëéºæ8ÍÚ†æÙ,
-ssquid:UselessImportCheck<"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾şÿÿÿÿ8ÍÚ†æÙ,
-hsquid:CallToDeprecatedMethod”"8Remove this use of "getLoaderManager"; it is deprecated.(–êÙÂ8ÍÚ†æÙ,
-qsquid:S3776ü"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Æ¿ú„8ÍÚ†æÙ,
-csquid:UselessImportCheck;"8Remove this unused import 'java.security.MessageDigest'.(Œğ²»8ÍÚ†æÙ,
-csquid:UselessImportCheck"8Remove this unused import 'com.google.gson.JsonElement'.(ğ†˜³8ÍÚ†æÙ,
-Gsquid:S1148„"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÍÚ†æÙ,
-lsquid:MaximumInheritanceDepthE"<This class has 8 parents which is greater than 5 authorized.(ôã©Ö8ÍÚ†æÙ,
-Qsquid:S1135æ"2Complete the task associated to this TODO comment.(Ö¾ã¯8ÍÚ†æÙ,
-osquid:S1192†"KDefine a constant instead of duplicating this literal "usuario_id" 3 times.(ç˜£Îúÿÿÿÿ8ÍÚ†æÙ,
-^squid:CallToDeprecatedMethod".Remove this use of "Loader"; it is deprecated.(İü¥ı8ÍÚ†æÙ,
-‡squid:UselessImportCheck"WRemove this unused import 'com.example.root.educateappcontrolvisitas.api.model.Visita'.(«Ûİİûÿÿÿÿ8ÍÚ†æÙ,
-‹squid:UselessImportCheck"`Remove this unused import 'com.example.root.educateappcontrolvisitas.api.service.VisitasClient'.(¦ìä8ÍÚ†æÙ,
-squid:UselessImportCheck"_Remove this unused import 'com.example.root.educateappcontrolvisitas.ui.adapter.VisitaAdapter'.(ø«şïùÿÿÿÿ8ÍÚ†æÙ,
-ssquid:S1192†"ODefine a constant instead of duplicating this literal "usuario_nombre" 3 times.(ç˜£Îúÿÿÿÿ8ÍÚ†æÙ,
-csquid:CallToDeprecatedMethod®".Remove this use of "Loader"; it is deprecated.(Ÿ ßşùÿÿÿÿ8ÍÚ†æÙ,
-csquid:CallToDeprecatedMethodº".Remove this use of "Loader"; it is deprecated.(ô¬ı¶ùÿÿÿÿ8ÍÚ†æÙ,
+psquid:S1192"ODefine a constant instead of duplicating this literal "usuario_nombre" 3 times.(ç˜£Îúÿÿÿÿ8ÜßïšÚ,
+lsquid:S1192"KDefine a constant instead of duplicating this literal "usuario_id" 3 times.(ç˜£Îúÿÿÿÿ8ÜßïšÚ,
+Psquid:S1066"/Merge this if statement with the enclosing one.(¿±Ïßüÿÿÿÿ8ÜßïšÚ,
+Rsquid:S1068"1Remove this unused "nombreUsuario" private field.(ùæ˜›úÿÿÿÿ8ÜßïšÚ,
+Isquid:S1068"-Remove this unused "usuarioId" private field.(µ¿’¼8ÜßïšÚ,
+Csquid:S1214""Move constants to a class or enum.(×™´ªùÿÿÿÿ8ÜßïšÚ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(üşÃ™ûÿÿÿÿ8ÜßïšÚ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(‹ş«Éüÿÿÿÿ8ÜßïšÚ,
+Nsquid:S1135"2Complete the task associated to this TODO comment.(¼í 8ÜßïšÚ,
+Nsquid:S1135"2Complete the task associated to this TODO comment.(Ö¾ã¯8ÜßïšÚ,
+Xsquid:S1905"7Remove this unnecessary cast to "AutoCompleteTextView".(À˜‚ìşÿÿÿÿ8ÜßïšÚ,
+Gsquid:S1905"+Remove this unnecessary cast to "EditText".(÷Î§ò8ÜßïšÚ,
+Esquid:S1905")Remove this unnecessary cast to "Button".(åà³¸8ÜßïšÚ,
+nsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Æ¿ú„8ÜßïšÚ,
+dsquid:CallToDeprecatedMethod"7Remove this use of "LoaderCallbacks"; it is deprecated.(ôã©Ö8ÜßïšÚ,
+esquid:CallToDeprecatedMethod"8Remove this use of "getLoaderManager"; it is deprecated.(–êÙÂ8ÜßïšÚ,
+[squid:CallToDeprecatedMethod".Remove this use of "Loader"; it is deprecated.(İü¥ı8ÜßïšÚ,
+asquid:CallToDeprecatedMethod"4Remove this use of "CursorLoader"; it is deprecated.(ëéºæ8ÜßïšÚ,
+`squid:CallToDeprecatedMethod".Remove this use of "Loader"; it is deprecated.(Ÿ ßşùÿÿÿÿ8ÜßïšÚ,
+`squid:CallToDeprecatedMethod".Remove this use of "Loader"; it is deprecated.(ô¬ı¶ùÿÿÿÿ8ÜßïšÚ,
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ô¬ı¶ùÿÿÿÿ8ÜßïšÚ,
+Vsquid:S2386"5Move "PROJECTION" to a class and lower its visibility(‡ÎÌÑùÿÿÿÿ8ÜßïšÚ,
+‰squid:UselessImportCheck"`Remove this unused import 'com.example.root.educateappcontrolvisitas.api.service.VisitasClient'.(¦ìä8ÜßïšÚ,
+^squid:UselessImportCheck"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8ÜßïšÚ,
+csquid:UselessImportCheck":Remove this unused import 'java.security.DigestException'.(åÔÆÌ8ÜßïšÚ,
+_squid:UselessImportCheck"6Remove this unused import 'com.google.gson.JsonArray'.(ÎöêŠ8ÜßïšÚ,
+qsquid:UselessImportCheck"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾şÿÿÿÿ8ÜßïšÚ,
+asquid:UselessImportCheck"8Remove this unused import 'java.security.MessageDigest'.(Œğ²»8ÜßïšÚ,
+squid:UselessImportCheck"_Remove this unused import 'com.example.root.educateappcontrolvisitas.ui.adapter.VisitaAdapter'.(ø«şïùÿÿÿÿ8ÜßïšÚ,
+asquid:UselessImportCheck"8Remove this unused import 'com.google.gson.JsonElement'.(ğ†˜³8ÜßïšÚ,
+_squid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8ÜßïšÚ,
+…squid:UselessImportCheck"WRemove this unused import 'com.example.root.educateappcontrolvisitas.api.model.Visita'.(«Ûİİûÿÿÿÿ8ÜßïšÚ,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÜßïšÚ,
+jsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(ôã©Ö8ÜßïšÚ,

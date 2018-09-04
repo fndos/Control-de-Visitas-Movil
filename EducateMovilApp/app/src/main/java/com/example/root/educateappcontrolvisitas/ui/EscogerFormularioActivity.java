@@ -28,9 +28,9 @@ public class EscogerFormularioActivity extends AppCompatActivity {
 
         final Visita visita = getIntent().getParcelableExtra("visitaActual");
 
-        btnPedagogico = (Button) findViewById(R.id.btn_pedagogico);
-        btnTecnico = (Button) findViewById(R.id.btn_tecnico);
-        btnAmbos = (Button) findViewById(R.id.btn_ambos);
+        btnPedagogico =  findViewById(R.id.btn_pedagogico);
+        btnTecnico    = findViewById(R.id.btn_tecnico);
+        btnAmbos      =  findViewById(R.id.btn_ambos);
 
 
         btnTecnico.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +40,15 @@ public class EscogerFormularioActivity extends AppCompatActivity {
                 Intent formularioTecnico = new Intent(getApplicationContext(),TecnicoFormularioActivity.class);
                 formularioTecnico.putExtra("visitaActual",visita);
                 startActivity(formularioTecnico);
+            }
+        });
+
+        btnPedagogico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent formularioPedagogico = new Intent(getApplicationContext(),TutorFormularioActivity.class);
+                //formularioTecnico.putExtra("visitaActual",visita);
+                startActivity(formularioPedagogico);
             }
         });
 

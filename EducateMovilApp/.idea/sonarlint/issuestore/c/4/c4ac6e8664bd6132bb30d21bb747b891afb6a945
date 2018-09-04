@@ -1,5 +1,5 @@
 
-\squid:UselessImportCheck"1Remove this unused import 'android.app.Activity'.(‡ÊÍÆ8ÉõÍæÙ,
-qsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(ñºÃùÿÿÿÿ8¹¤çæÙ,
-hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ºøŸb8˜œ‡çÙ,
-isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(üšë8¿”™çÙ,
+Zsquid:UselessImportCheck"1Remove this unused import 'android.app.Activity'.(‡ÊÍÆ8Š©³–Ú,
+tsquid:UselessImportCheck"FRemove this unused import 'androidx.fragment.app.FragmentTransaction'.(¦İÚ¿şÿÿÿÿ8Øû£™Ú,
+osquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(ñºÃùÿÿÿÿ8Š©³–Ú,
+psquid:UselessImportCheck"BRemove this unused import 'androidx.fragment.app.FragmentManager'.(¯­ë‹ıÿÿÿÿ8Øû£™Ú,

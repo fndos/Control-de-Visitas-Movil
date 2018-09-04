@@ -18,14 +18,6 @@ public class TutorFormularioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutor_formulario);
 
-        FormTutorPartA formTutorPartA = new FormTutorPartA();
-
-        //FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.fr_body, formTutorPartA);
-        fragmentTransaction.commit();
-
-       // fragmentManager.beginTransaction().add(R.id.fr_body, formTutorPartA).commit();
 
     }
 }

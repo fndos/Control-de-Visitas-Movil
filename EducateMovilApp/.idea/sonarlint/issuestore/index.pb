@@ -37,3 +37,27 @@ A
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 É
 Sapp/src/main/java/com/example/root/educateappcontrolvisitas/ui/TutorFormulario.java,0\2\023ff78eb0309e2d6f45017ffd1a4bf10f8f66cc
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+~
+Napp/src/main/java/com/example/root/educateappcontrolvisitas/ui/GpsTracker.java,a\2\a2f1f2f07c1cad7eca51e5bc929bd80327b6b31b
+Ñ
+Tapp/src/main/java/com/example/root/educateappcontrolvisitas/ui/CheckOutActivity.java,6\0\60a5bbe11f7026b774cae4bae0a5ff7d96d4ccc5
+Ü
+Vapp/src/main/java/com/example/root/educateappcontrolvisitas/ui/DatePickerFragment.java,a\5\a57aac29d2e8a783b19758b7558ff498ba4c8ef7
+É
+Sapp/src/main/java/com/example/root/educateappcontrolvisitas/ui/DetallesEscuela.java,d\a\dabe0a5c82dd686204a2268c66e5cdcf0754e06c
+â
+Yapp/src/main/java/com/example/root/educateappcontrolvisitas/ui/WorkaroundMapFragment.java,1\7\171d98c7d51dde1003b4147a4c4bb494a0c84e55
+î
+dapp/src/main/java/com/example/root/educateappcontrolvisitas/ui/mostrarFormularioTecnicoActivity.java,7\f\7fe6db16e612b4281b657bf079c08e430077f0f8
+g
+7app/src/main/res/layout/activity_escoger_formulario.xml,0\b\0b89ceba92d1229885225507df7317db4040c63e
+o
+?app/src/main/res/layout/activity_mostrar_formulario_tecnico.xml,6\2\627fec43f89d7a82ff4717c849fc7e8474a6e159
+å
+\app/src/main/java/com/example/root/educateappcontrolvisitas/api/model/FormularioTecnico.java,3\4\341bf51aa3a7f664a2fc817c738929992f95258b
+Å
+Qapp/src/main/java/com/example/root/educateappcontrolvisitas/api/model/Visita.java,8\e\8e92637717e0ce8c968fffc7a966fef4068ea91d
+è
+_app/src/main/java/com/example/root/educateappcontrolvisitas/api/model/FormularioPedagogico.java,2\d\2dd6c00bb299a80ece97325ceace8e445fef1d66

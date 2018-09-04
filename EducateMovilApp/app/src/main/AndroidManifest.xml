@@ -43,9 +43,8 @@
         <activity android:name=".ui.TecnicoFormularioActivity" />
         <activity android:name=".ui.EscogerFormularioActivity" />
         <activity android:name=".ui.CheckOutActivity" />
-<<<<<<< HEAD
-        <activity android:name=".ui.mostrarFormularioTecnicoActivity"></activity>
-=======
+
+        <activity android:name=".ui.mostrarFormularioTecnicoActivity" />
         <activity android:name=".ui.TutorFormularioActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,14 +52,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.TutorFormulario">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
->>>>>>> ba80c6048de64c21d33e0bb515fccfe946163d1a
     </application>
 
 </manifest>
