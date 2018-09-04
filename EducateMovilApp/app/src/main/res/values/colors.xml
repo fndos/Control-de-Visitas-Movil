@@ -5,7 +5,7 @@
     <color name="colorAccent">#ffa500</color>
     <!-- Background color for app -->
     <color name="tan_background_pendiente">#FFF7DA</color>
-    <color name="tan_background_realizada">#ffb6b1</color>
-    <color name="tan_background_no_realizada">#efd19f</color>
+    <color name="tan_background_no_realizada">#ffb6b1</color>
+    <color name="tan_background_realizada">#efd19f</color>
 
 </resources>

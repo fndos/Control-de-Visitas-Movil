@@ -329,7 +329,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/labelAccionTomada"
+                        android:id="@+id/labelAccion"
                         android:layout_width="100dp"
                         android:layout_height="24dp"
                         android:layout_below="@id/labelVisitaConTecnico"
@@ -345,11 +345,11 @@
 
 
                     <TextView
-                        android:id="@+id/accionTomada"
+                        android:id="@+id/accion"
                         android:layout_width="280dp"
                         android:layout_height="40dp"
                         android:layout_below="@id/visitaConTecnico"
-                        android:layout_toRightOf="@id/labelAccionTomada"
+                        android:layout_toRightOf="@id/labelAccion"
                         android:layout_weight="1"
                         android:gravity="top"
                         android:padding="3dp"
@@ -457,6 +457,7 @@
                                 android:textColor="@android:color/black"/>
 
                             <EditText
+                                android:id="@+id/accionTomada"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="textCapSentences|textNoSuggestions|textMultiLine"
@@ -484,6 +485,7 @@
                                 android:textColor="@android:color/black"/>
 
                             <EditText
+                                android:id="@+id/observaciones"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="textCapSentences|textNoSuggestions|textMultiLine"
@@ -496,14 +498,33 @@
                                 android:background="#ffffff"/>
                         </LinearLayout>
 
-                        <Button
-                            android:id="@+id/btn_siguiente"
-                            android:layout_gravity="right"
-                            android:layout_margin="15dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/colorPrimary"
-                            android:text="SIGUIENTE"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+                            <Button
+                                android:id="@+id/btn_cancelar"
+                                android:layout_gravity="right"
+                                android:layout_margin="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorPrimary"
+                                android:text="CANCELAR"/>
+
+
+                            <Button
+                                android:id="@+id/btn_siguiente"
+                                android:layout_gravity="right"
+                                android:layout_margin="15dp"
+                                android:layout_toRightOf="@id/btn_cancelar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorPrimary"
+                                android:text="SIGUIENTE"/>
+
+                        </RelativeLayout>
+
 
 
                     </LinearLayout>

@@ -38,5 +38,25 @@ public interface VisitasClient {
                        @Field("id") int id
 
                        );
+
+    @POST("serviceweb/api/v1/visit/?obj_update")
+    @FormUrlEncoded
+    Call<Void> checkOut(@Query("username") String username,
+                       @Query("api_key") String api_key,
+                       @Query("limit") int limit,
+                       @Field("user") String user,
+                       @Field("requirement") String requirement,
+                       @Field("date_planned") String date_planned,
+                       @Field("check_out") String check_out,
+                       @Field("coordinates_lat_out") double coordinates_lat_out,
+                       @Field("coordinates_lon_out") double coordinates_lon_out,
+                       @Field("state") int state,
+                       @Field("type") int type,
+                        @Field("check_in") String check_in,
+                        @Field("coordinates_lat_in") double coordinates_lat_in,
+                        @Field("coordinates_lon_in") double coordinates_lon_in,
+                       @Field("id") int id
+
+    );
 }
 

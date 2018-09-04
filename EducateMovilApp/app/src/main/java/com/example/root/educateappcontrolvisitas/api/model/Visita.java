@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.sql.Time;
 import java.util.Date;
 
-public class Visita implements Parcelable {
+public class Visita implements Parcelable,Comparable {
 
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
@@ -297,5 +297,14 @@ public class Visita implements Parcelable {
 
 
 
+    }
+
+    @Override
+    public int compareTo(Object o) {
+
+        int estadoVisita2 = ((Visita) o).state;
+
+        //ascendente
+        return this.state-estadoVisita2;
     }
 }
