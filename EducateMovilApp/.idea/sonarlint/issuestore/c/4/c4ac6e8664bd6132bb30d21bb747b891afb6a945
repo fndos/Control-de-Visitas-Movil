@@ -1,5 +1,0 @@
-
-Zsquid:UselessImportCheck"1Remove this unused import 'android.app.Activity'.(‡ÊÍÆ8Š©³–Ú,
-tsquid:UselessImportCheck"FRemove this unused import 'androidx.fragment.app.FragmentTransaction'.(¦ÝÚ¿þÿÿÿÿ8Øû£™Ú,
-osquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(ñŽºÃùÿÿÿÿ8Š©³–Ú,
-psquid:UselessImportCheck"BRemove this unused import 'androidx.fragment.app.FragmentManager'.(¯­ë‹ýÿÿÿÿ8Øû£™Ú,

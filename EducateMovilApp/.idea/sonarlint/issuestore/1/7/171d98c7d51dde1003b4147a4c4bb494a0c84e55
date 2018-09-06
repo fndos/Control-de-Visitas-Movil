@@ -1,5 +1,0 @@
-
-S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(ãÁð™øÿÿÿÿ
-bsquid:S1871"HThis case's code block is the same as the block for the case on line 48.(¨é×öýÿÿÿÿ
-esquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ãÁð™øÿÿÿÿ
-[squid:CallToDeprecatedMethod"0Remove this use of "getColor"; it is deprecated.(½»ã×ýÿÿÿÿ
