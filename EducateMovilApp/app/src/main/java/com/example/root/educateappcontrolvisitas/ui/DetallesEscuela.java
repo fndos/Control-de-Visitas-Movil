@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -71,7 +72,14 @@ public class DetallesEscuela extends AppCompatActivity{
         apellidosUsuario = visita.getUsername();
         usuarioID = visita.getUser_id();
         TextView visita_escuela_hora = (TextView) findViewById(R.id.visita_hora);
-        visita_escuela_hora.setText("00h00");
+        String string = visita.getDate_planned();
+        String[] parts = string.split("T");
+        String fecha = parts[0]; // 004
+        String hora = parts[1];
+        System.out.println(string);
+        System.out.println(fecha);
+        System.out.println(hora.substring(0, 5));
+        visita_escuela_hora.setText(hora);
         TextView visita_escuela_numero = (TextView) findViewById(R.id.visita_numero);
         int length = (int) (Math.log10(visita.getId()) + 1);
         String original = "N° ";
@@ -88,7 +96,7 @@ public class DetallesEscuela extends AppCompatActivity{
         TextView visita_escuela_direccion = (TextView) findViewById(R.id.direccion);
         visita_escuela_direccion.setText(visita.getSchool_address());
         TextView visita_escuela_jornada = (TextView) findViewById(R.id.escuela_jornada);
-        visita_escuela_jornada.setText("VESPERTINA");
+        visita_escuela_jornada.setText(visita.getSchool_workday());
 
         TextView visita_escuela_parroquia = (TextView) findViewById(R.id.parroquia);
         visita_escuela_parroquia.setText(visita.getSchool_parish());
@@ -111,13 +119,18 @@ public class DetallesEscuela extends AppCompatActivity{
         else {
             if(noSeHaHechoCheckIn){
                 botonCHECKIN.setText("CHECK IN");
-                try {
-                    if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
-                        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+
+                    try {
+                        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+                            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+                        }
+                    } catch (Exception e){
+                        e.printStackTrace();
                     }
-                } catch (Exception e){
-                    e.printStackTrace();
+// check if permission is granted or not
                 }
+
             }
             else{
                 botonCHECKIN.setText("LLENAR FORMULARIO");

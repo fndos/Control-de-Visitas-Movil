@@ -37,11 +37,20 @@ public class Visita implements Parcelable,Comparable {
       private String school_name;
       private String school_parish;
       private String school_reference;
+      private String school_workday;
       private int state;
       private int type;
       private int user_id;
       private int user_type;
       private String username;
+
+    public String getSchool_workday() {
+        return school_workday;
+    }
+
+    public void setSchool_workday(String school_workday) {
+        this.school_workday = school_workday;
+    }
 
     public String getCheck_in() {
         return check_in;
@@ -250,6 +259,7 @@ public class Visita implements Parcelable,Comparable {
         user_id = in.readInt();
         user_type = in.readInt();
         username = in.readString();
+        school_workday = in.readString();
 
 
 
@@ -291,6 +301,7 @@ public class Visita implements Parcelable,Comparable {
         parcel.writeInt(user_id);
         parcel.writeInt(user_type);
         parcel.writeString(username);
+        parcel.writeString(school_workday);
 
 
 

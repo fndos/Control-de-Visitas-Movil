@@ -167,7 +167,7 @@ public class CrearFormularioPedagogico extends AppCompatActivity {
         direccion.setText(visita.getSchool_address());
         labelEscuelaJornada = (TextView) findViewById(R.id.label_escuela_jornada);
         escuelaJornada = (TextView) findViewById(R.id.escuela_jornada);
-        escuelaJornada.setText("N/A");
+        escuelaJornada.setText(visita.getSchool_workday());
 
         labelParroquia = (TextView) findViewById(R.id.labelParroquia);
         parroquia = (TextView) findViewById(R.id.parroquia);

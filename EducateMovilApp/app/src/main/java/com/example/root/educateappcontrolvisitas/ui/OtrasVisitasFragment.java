@@ -184,7 +184,7 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
         Retrofit retrofit = builder.build();
 
         VisitasClient visitasClient = retrofit.create(VisitasClient.class);
-        Call<JsonObject> call =  visitasClient.obtenerVisitas("system","ABC123456789",100);
+        Call<JsonObject> call =  visitasClient.obtenerVisitas("system","ABC123456789",1000000);
 
         ///////////////////////////////////////
 
@@ -278,7 +278,9 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
                             String escuela_amie = visita_Escuela.getAsJsonObject().get("amie").getAsString();
                             String escuela_nombre = visita_Escuela.getAsJsonObject().get("name").getAsString();
                             String escuela_parroquia = visita_Escuela.getAsJsonObject().get("parish").getAsString();
-                            String escuela_referencia = visita_Escuela.getAsJsonObject().get("reference").getAsString();
+                            int escuelaJornada = visita_Escuela.getAsJsonObject().get("workday").getAsInt();
+                            String[] jornadas = {"","MATUTINA", "VESPERTINA","MATUTINA/VESPERTINA"};
+                            String escuela_jornada = jornadas[escuelaJornada];                            String escuela_referencia = visita_Escuela.getAsJsonObject().get("reference").getAsString();
                             JsonElement estado_visita = visita.getAsJsonObject().get("state");
                             int visita_estado;
                             if(estado_visita.isJsonNull()){
@@ -352,6 +354,7 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
                                 nuevaVisita.setSchool_name(escuela_nombre);
                                 nuevaVisita.setSchool_parish(escuela_parroquia);
                                 nuevaVisita.setSchool_reference(escuela_referencia);
+                                nuevaVisita.setSchool_workday(escuela_jornada);
                                 if(fechaExpirada && visita_estado==1){
                                     nuevaVisita.setState(3);
 

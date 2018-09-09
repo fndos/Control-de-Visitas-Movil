@@ -115,7 +115,7 @@ public class VisitasHoyFragment extends Fragment {
         Retrofit retrofit = builder.build();
 
         VisitasClient visitasClient = retrofit.create(VisitasClient.class);
-        Call<JsonObject> call =  visitasClient.obtenerVisitas("system","ABC123456789",100);
+        Call<JsonObject> call =  visitasClient.obtenerVisitas("system","ABC123456789",1000000);
         final List<Visita> visitas = new ArrayList<Visita>();
 
         ///////////////////////////////////////
@@ -209,6 +209,9 @@ public class VisitasHoyFragment extends Fragment {
                             String escuela_amie = visita_Escuela.getAsJsonObject().get("amie").getAsString();
                             String escuela_nombre = visita_Escuela.getAsJsonObject().get("name").getAsString();
                             String escuela_parroquia = visita_Escuela.getAsJsonObject().get("parish").getAsString();
+                            int escuelaJornada = visita_Escuela.getAsJsonObject().get("workday").getAsInt();
+                            String[] jornadas = {"","MATUTINA", "VESPERTINA","MATUTINA/VESPERTINA"};
+                            String escuela_jornada = jornadas[escuelaJornada];
                             String escuela_referencia = visita_Escuela.getAsJsonObject().get("reference").getAsString();
                             JsonElement estado_visita = visita.getAsJsonObject().get("state");
                             int visita_estado;
@@ -266,6 +269,7 @@ public class VisitasHoyFragment extends Fragment {
                                 nuevaVisita.setUser_type(tipo_usuario);
                                 nuevaVisita.setUser_id(usuario_id);
                                 nuevaVisita.setUsername(usuario_username);
+                                nuevaVisita.setSchool_workday(escuela_jornada);
                                 visitasDeHoy.add(nuevaVisita);
                             }
 
