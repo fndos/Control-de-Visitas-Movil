@@ -128,7 +128,7 @@ public class incidenciaFormulario extends AppCompatActivity {
 
 
                     Call<Void> call = incidenciaClient.guardarIncidencia("system","ABC123456789",1000000,escuelaId,incidenciaReportada,1,3,usuario_Id
-                            ,"True",visita.getUsername(),visita.getUsername());
+                            ,"True",visita.getUser_first_name() + " " + visita.getUser_last_name(),visita.getUser_first_name() + " " + visita.getUser_last_name());
 
                     call.enqueue(new Callback<Void>() {
                         @Override

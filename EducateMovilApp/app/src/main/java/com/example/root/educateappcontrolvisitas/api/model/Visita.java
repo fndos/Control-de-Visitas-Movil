@@ -44,6 +44,24 @@ public class Visita implements Parcelable,Comparable {
       private int user_id;
       private int user_type;
       private String username;
+      private String user_first_name;
+    private String user_last_name;
+
+    public String getUser_first_name() {
+        return user_first_name;
+    }
+
+    public void setUser_first_name(String user_first_name) {
+        this.user_first_name = user_first_name;
+    }
+
+    public String getUser_last_name() {
+        return user_last_name;
+    }
+
+    public void setUser_last_name(String user_last_name) {
+        this.user_last_name = user_last_name;
+    }
 
     public String getSchool_workday() {
         return school_workday;
@@ -270,6 +288,8 @@ public class Visita implements Parcelable,Comparable {
         user_type = in.readInt();
         username = in.readString();
         school_workday = in.readString();
+        user_first_name = in.readString();
+        user_last_name = in.readString();
 
 
 
@@ -313,6 +333,8 @@ public class Visita implements Parcelable,Comparable {
         parcel.writeInt(user_type);
         parcel.writeString(username);
         parcel.writeString(school_workday);
+        parcel.writeString(user_first_name);
+        parcel.writeString(user_last_name);
 
 
 

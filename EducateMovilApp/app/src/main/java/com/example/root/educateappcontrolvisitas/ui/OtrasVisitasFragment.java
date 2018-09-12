@@ -304,6 +304,8 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
 
                             int usuario_id = visita_user.getAsJsonObject().get("id").getAsInt();
                             String usuario_username = visita_user.getAsJsonObject().get("username").getAsString();
+                            String usuario_nombre = visita_user.getAsJsonObject().get("first_name").getAsString();
+                            String usuario_apellido = visita_user.getAsJsonObject().get("last_name").getAsString();
 
 
                             int idUsuario = Integer.parseInt(usuarioID);
@@ -369,6 +371,8 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
                                 nuevaVisita.setUser_type(tipo_usuario);
                                 nuevaVisita.setUser_id(usuario_id);
                                 nuevaVisita.setUsername(usuario_username);
+                                nuevaVisita.setUser_first_name(usuario_nombre);
+                                nuevaVisita.setUser_last_name(usuario_apellido);
                                 visitasDeFecha.add(nuevaVisita);
                             }
 

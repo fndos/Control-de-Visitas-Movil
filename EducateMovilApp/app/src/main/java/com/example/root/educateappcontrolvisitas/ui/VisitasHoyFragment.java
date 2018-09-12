@@ -236,7 +236,8 @@ public class VisitasHoyFragment extends Fragment {
 
                             int usuario_id = visita_user.getAsJsonObject().get("id").getAsInt();
                             String usuario_username = visita_user.getAsJsonObject().get("username").getAsString();
-
+                            String usuario_nombre = visita_user.getAsJsonObject().get("first_name").getAsString();
+                            String usuario_apellido = visita_user.getAsJsonObject().get("last_name").getAsString();
 
                             int idUsuario = Integer.parseInt(usuarioID);
                             System.out.println("-------------------------------------------------------------------------------------");
@@ -272,6 +273,8 @@ public class VisitasHoyFragment extends Fragment {
                                 nuevaVisita.setUsername(usuario_username);
                                 nuevaVisita.setSchool_workday(escuela_jornada);
                                 nuevaVisita.setSchool_id(escuela_id);
+                                nuevaVisita.setUser_first_name(usuario_nombre);
+                                nuevaVisita.setUser_last_name(usuario_apellido);
                                 visitasDeHoy.add(nuevaVisita);
                             }
 
