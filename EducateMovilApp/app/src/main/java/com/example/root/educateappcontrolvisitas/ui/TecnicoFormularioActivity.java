@@ -72,7 +72,15 @@ public class TecnicoFormularioActivity extends AppCompatActivity {
 
         scrollEscuela = (ScrollView) findViewById(R.id.scrollEscuela);
         visitaHora = (TextView) findViewById(R.id.visita_hora);
-        visitaHora.setText("00H00");
+        visitaHora = (TextView) findViewById(R.id.visita_hora);
+        String string = visita.getDate_planned();
+        String[] parts = string.split("T");
+        String fecha = parts[0]; // 004
+        String hora = parts[1];
+        System.out.println(string);
+        System.out.println(fecha);
+        System.out.println(hora.substring(0, 5));
+        visitaHora.setText(hora);
         visitaNumero = (TextView) findViewById(R.id.visita_numero);
         int length = (int) (Math.log10(visita.getId()) + 1);
         String s = "c";
@@ -90,7 +98,7 @@ public class TecnicoFormularioActivity extends AppCompatActivity {
         direccion.setText(visita.getSchool_address());
         labelEscuelaJornada = (TextView) findViewById(R.id.label_escuela_jornada);
         escuelaJornada = (TextView) findViewById(R.id.escuela_jornada);
-        escuelaJornada.setText("N/A");
+        escuelaJornada.setText(visita.getSchool_workday());
 
         labelParroquia = (TextView) findViewById(R.id.labelParroquia);
         parroquia = (TextView) findViewById(R.id.parroquia);
@@ -188,10 +196,19 @@ public class TecnicoFormularioActivity extends AppCompatActivity {
                 call.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
+                        if(visita.getUser_type() == 2 || visita.getUser_type() == 4){
                         Intent checkOutIntent = new Intent(getApplicationContext(), CheckOutActivity.class);
                         checkOutIntent.putExtra("visitaActual",visita);
                         startActivity(checkOutIntent);
+                        }
+                        else{
 
+                                Intent checkOutIntent = new Intent(getApplicationContext(), Incidencias.class);
+                                checkOutIntent.putExtra("visitaActual",visita);
+                                startActivity(checkOutIntent);
+
+
+                    }
                     }
 
                     @Override

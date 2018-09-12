@@ -181,7 +181,7 @@ public class DetallesEscuela extends AppCompatActivity{
                         Retrofit retrofit = builder.build();
 
                         VisitasClient visitasClient = retrofit.create(VisitasClient.class);
-                        Call<Void> call =  visitasClient.checkIn("system","ABC123456789",1000,usuarioFK,requerimientoFK,visita.getDate_planned()
+                        Call<Void> call =  visitasClient.checkIn("system","ABC123456789",1000000,usuarioFK,requerimientoFK,visita.getDate_planned()
                                 ,fechaHoy,latitud,longitud,visita.getState(),visita.getType(),visita.getId());
 
                         call.enqueue(new Callback<Void>() {

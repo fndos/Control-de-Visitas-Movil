@@ -276,12 +276,12 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:layout_marginBottom="3dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ACCION TOMADA:"
-                            android:textStyle="bold"
-                            android:textColor="@android:color/black"/>
+                            android:layout_marginBottom="3dp"
+                            android:text="ACCION TOMADA:*"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
 
                         <EditText
                             android:id="@+id/accionTomadaPedagogica"
@@ -308,7 +308,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="3dp"
-                            android:text="# de profesores capacitados APCI:   "
+                            android:text="# de profesores capacitados APCI:*   "
                             android:textColor="@android:color/black"
                             android:textStyle="bold" />
 
@@ -329,9 +329,9 @@
                             android:id="@+id/labelMinutosAPCI"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="3dp"
                             android:layout_below="@id/labelNoProfesoresCapacitados"
-                            android:text="Minutos de uso APCI:   "
+                            android:layout_marginBottom="3dp"
+                            android:text="Minutos de uso APCI:*   "
                             android:textColor="@android:color/black"
                             android:textStyle="bold" />
 

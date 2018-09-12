@@ -20,6 +20,9 @@ public interface formularioPedagogicoClient {
                                  @Field("internet") int internet,
                                  @Field("no_prof_capacitados") int no_prof_capacitados,
                                  @Field("minutos_uso") double minutos_uso,
+                                 @Field("action_taken") String action_taken,
+                                 @Field("created_by") String created_by,
+                                 @Field("updated_by") String updated_by);/*
                                  @Field("AI_2doEGB_A") double AI_2doEGB_A,
                                  @Field("AI_3roEGB_A") double AI_3roEGB_A,
                                  @Field("AI_4toEGB_A") double AI_4toEGB_A,
@@ -119,12 +122,9 @@ public interface formularioPedagogicoClient {
                                  @Field("PA_10moEGB_MAT") double PA_10moEGB_MAT,
                                  @Field("PA_10moEGB_LEN") double PA_10moEGB_LEN,
                                  @Field("PA_TOTAL_PROMEDIO_LEN") double PA_TOTAL_PROMEDIO_LEN,
-                                 @Field("PA_TOTAL_PROMEDIO_MAT") double PA_TOTAL_PROMEDIO_MAT,
-                                 @Field("action_taken") String action_taken,
-                                 @Field("created_by") String created_by,
-                                 @Field("updated_by") String updated_by
+                                 @Field("PA_TOTAL_PROMEDIO_MAT") double PA_TOTAL_PROMEDIO_MAT
 
-    );
+    );*/
 
     @GET("serviceweb/api/v1/pedagogicalform/?format=json")
     Call<JsonObject> obtenerFormularios(@Query("username") String username,

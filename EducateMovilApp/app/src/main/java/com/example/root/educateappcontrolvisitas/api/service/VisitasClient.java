@@ -55,8 +55,10 @@ public interface VisitasClient {
                         @Field("check_in") String check_in,
                         @Field("coordinates_lat_in") double coordinates_lat_in,
                         @Field("coordinates_lon_in") double coordinates_lon_in,
-                       @Field("id") int id
+                       @Field("id") int id,
+                        @Field("created_by") String created_by
 
-    );
+
+                        );
 }
 

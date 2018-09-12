@@ -206,6 +206,7 @@ public class VisitasHoyFragment extends Fragment {
                             JsonElement visita_Escuela = visita_requerimiento.getAsJsonObject().get("school");
                             String escuela_direccion = visita_Escuela.getAsJsonObject().get("address").getAsString();
                             String escuela_embajador_in = visita_Escuela.getAsJsonObject().get("ambassador_in").getAsString();
+                            int escuela_id = visita_Escuela.getAsJsonObject().get("id").getAsInt();
                             String escuela_amie = visita_Escuela.getAsJsonObject().get("amie").getAsString();
                             String escuela_nombre = visita_Escuela.getAsJsonObject().get("name").getAsString();
                             String escuela_parroquia = visita_Escuela.getAsJsonObject().get("parish").getAsString();
@@ -270,6 +271,7 @@ public class VisitasHoyFragment extends Fragment {
                                 nuevaVisita.setUser_id(usuario_id);
                                 nuevaVisita.setUsername(usuario_username);
                                 nuevaVisita.setSchool_workday(escuela_jornada);
+                                nuevaVisita.setSchool_id(escuela_id);
                                 visitasDeHoy.add(nuevaVisita);
                             }
 

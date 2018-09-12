@@ -149,7 +149,14 @@ public class CrearFormularioPedagogico extends AppCompatActivity {
 
         scrollEscuela = (ScrollView) findViewById(R.id.scrollFormularioPedagogico);
         visitaHora = (TextView) findViewById(R.id.visita_hora);
-        visitaHora.setText("00H00");
+        String string = visita.getDate_planned();
+        String[] parts = string.split("T");
+        String fecha = parts[0]; // 004
+        String hora = parts[1];
+        System.out.println(string);
+        System.out.println(fecha);
+        System.out.println(hora.substring(0, 5));
+        visitaHora.setText(hora);
         visitaNumero = (TextView) findViewById(R.id.visita_numero);
         int length = (int) (Math.log10(visita.getId()) + 1);
         String original = "N° ";
@@ -297,6 +304,7 @@ public class CrearFormularioPedagogico extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean primeraParteVacia,tablaAIVacia,tablaATVacia,tablaLAVacia,tablaPAVacia, camposVacios;
+                /*
                 String AI_2A = AI_2doEGB_A.getText().toString();
                 String AI_3A = AI_3roEGB_A.getText().toString();
                 String AI_4A = AI_4toEGB_A.getText().toString();
@@ -412,14 +420,14 @@ public class CrearFormularioPedagogico extends AppCompatActivity {
                         TextUtils.isEmpty(PA_2_MAT) || TextUtils.isEmpty(PA_3_MAT) || TextUtils.isEmpty(PA_4_MAT) || TextUtils.isEmpty(PA_5_MAT) || TextUtils.isEmpty(PA_6_MAT)
                         || TextUtils.isEmpty(PA_7_MAT) || TextUtils.isEmpty(PA_8_MAT) || TextUtils.isEmpty(PA_9_MAT) || TextUtils.isEmpty(PA_10_MAT);
 
-
+*/
 
                 primeraParteVacia = TextUtils.isEmpty(noProf.getText().toString()) || TextUtils.isEmpty(minutosAPCI.getText().toString()) || TextUtils.isEmpty(accionTomada.getText().toString());
-                camposVacios = primeraParteVacia || tablaAIVacia || tablaATVacia || tablaLAVacia || tablaPAVacia;
+                camposVacios = primeraParteVacia;// || tablaAIVacia || tablaATVacia || tablaLAVacia || tablaPAVacia;
 
                 if(camposVacios){
                     Context context = getApplicationContext();
-                    CharSequence text = "¡LLENAR TODOS LOS CAMPOS!";
+                    CharSequence text = "¡LLENAR LOS CAMPOS OBLIGATORIOS(*)!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -434,7 +442,7 @@ public class CrearFormularioPedagogico extends AppCompatActivity {
                     String minApci = minutosAPCI.getText().toString();
                     double minAPCI = Double.parseDouble(minApci);
                     String accion = accionTomada.getText().toString();
-
+/*
                     double AI_2_A = Double.parseDouble(AI_2A);
                     double AI_3_A = Double.parseDouble(AI_3A);
                     double AI_4_A = Double.parseDouble(AI_4A);
@@ -552,7 +560,7 @@ public class CrearFormularioPedagogico extends AppCompatActivity {
                     double pa_total_LEN = pa_2_LEN + pa_3_LEN + pa_4_LEN + pa_5_LEN + pa_6_LEN + pa_7_LEN + pa_8_LEN + pa_9_LEN + pa_10_LEN;
                     double promedio_pa_LEN = pa_total_LEN / 9;
 
-
+*/
                     String id = "/serviceweb/api/v1/visit/" + visita.getId() + "/";
 
                     Retrofit.Builder builder = new Retrofit.Builder()
@@ -579,20 +587,22 @@ public class CrearFormularioPedagogico extends AppCompatActivity {
                     }
 
                     Call<Void> call = formularioPedagogicoClient.guardarFormulario("system","ABC123456789",
-                            visita.getId(),"/serviceweb/api/v1/visit/" + visita.getId() + "/",esExtracurricular,tieneInternet,noProf,minAPCI,AI_2_A,AI_3_A,AI_4_A,AI_5_A,AI_6_A,AI_7_A,AI_8_A,AI_9_A,AI_10_A,
+                            visita.getId(),"/serviceweb/api/v1/visit/" + visita.getId() + "/",esExtracurricular,tieneInternet,noProf,minAPCI,accion,visita.getUsername(),visita.getUsername());
+                    /*
+                    AI_2_A,AI_3_A,AI_4_A,AI_5_A,AI_6_A,AI_7_A,AI_8_A,AI_9_A,AI_10_A,
                             AI_2_B,AI_3_B,AI_4_B,AI_5_B,AI_6_B,AI_7_B,AI_8_B,AI_9_B,AI_10_B,AI_2_C,AI_3_C,AI_4_C,AI_5_C,AI_6_C,AI_7_C,AI_8_C,AI_9_C,AI_10_C,
                             ai_total_2,ai_total_3,ai_total_4,ai_total_5,ai_total_6,ai_total_7,ai_total_8,ai_total_9,ai_total_10,AI_total_A,AI_total_B,
                             AI_total_C,ai_total_promedio,at_2_LEN,at_3_LEN,at_4_LEN,at_5_LEN,at_6_LEN,at_7_LEN,at_8_LEN,at_9_LEN,at_10_LEN,at_2_MAT,
                             at_3_MAT,at_4_MAT,at_5_MAT,at_6_MAT,at_7_MAT,at_8_MAT,at_9_MAT,at_10_MAT,promedio_at_LEN,promedio_at_MAT,la_2_LEN,la_3_LEN,la_4_LEN,la_5_LEN,
                             la_6_LEN,la_7_LEN,la_8_LEN,la_9_LEN,la_10_LEN,la_2_MAT,la_3_MAT,la_4_MAT,la_5_MAT,la_6_MAT,la_7_MAT,la_8_MAT,la_9_MAT,la_10_MAT,promedio_la_LEN,
                             promedio_la_MAT,pa_2_MAT,pa_2_LEN,pa_3_MAT,pa_3_LEN,pa_4_MAT,pa_4_LEN,pa_5_MAT,pa_5_LEN,pa_6_MAT,pa_6_LEN,pa_7_MAT,pa_7_LEN,pa_8_MAT,pa_8_LEN,
-                            pa_9_MAT,pa_9_LEN,pa_10_MAT,pa_10_LEN,promedio_pa_LEN,promedio_pa_MAT,accion,visita.getUsername(),visita.getUsername() );
+                            pa_9_MAT,pa_9_LEN,pa_10_MAT,pa_10_LEN,promedio_pa_LEN,promedio_pa_MAT );*/
 
                     call.enqueue(new Callback<Void>() {
                         @Override
                         public void onResponse(Call<Void> call, Response<Void> response) {
-                            if(visita.getType() == 1){
-                                Intent checkOutIntent = new Intent(getApplicationContext(), CheckOutActivity.class);
+                            if(visita.getType() == 1 && (visita.getUser_type() == 1 || visita.getUser_type() == 3)){
+                                Intent checkOutIntent = new Intent(getApplicationContext(), Incidencias.class);
                                 checkOutIntent.putExtra("visitaActual",visita);
                                 startActivity(checkOutIntent);
 

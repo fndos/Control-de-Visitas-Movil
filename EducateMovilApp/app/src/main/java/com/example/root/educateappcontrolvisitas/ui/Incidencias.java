@@ -1,6 +1,14 @@
 package com.example.root.educateappcontrolvisitas.ui;
 
-//import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -16,23 +24,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-public class CheckOutActivity extends AppCompatActivity {
-
-    @Override
-    public void onBackPressed() {
-        return;
-    }
+public class Incidencias extends AppCompatActivity {
 
     private Button botonCHECKout;
+    private Button reportarIncidencia;
     private double latitud, longitud;
     private GpsTracker gpsTracker;
     private boolean noSeHizoCheckOut;
@@ -40,13 +35,14 @@ public class CheckOutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_out);
+        setContentView(R.layout.activity_incidencias);
 
         final Visita visita = getIntent().getParcelableExtra("visitaActual");
         botonCHECKout = (Button) findViewById(R.id.btn_checkout);
+        reportarIncidencia = (Button) findViewById(R.id.btn_ir_incidencia);
         noSeHizoCheckOut = visita.getCoordinates_lat_out() == 0.0 && visita.getCoordinates_lon_out() == 0.0;
         if(noSeHizoCheckOut){
-            botonCHECKout.setText("SI, CHECK OUT");
+            botonCHECKout.setText("CHECK OUT");
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 
                 try {
@@ -62,6 +58,19 @@ public class CheckOutActivity extends AppCompatActivity {
         else{
             botonCHECKout.setText("SI, SALIR");
         }
+
+        reportarIncidencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent llenarIncidencia = new Intent(getApplicationContext(), incidenciaFormulario.class);
+                llenarIncidencia.putExtra("visitaActual",visita);
+                startActivity(llenarIncidencia);
+
+
+
+
+            }
+        });
 
         botonCHECKout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +95,7 @@ public class CheckOutActivity extends AppCompatActivity {
                 call.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
-                        startActivity(new Intent(CheckOutActivity.this,MainActivity.class));
+                        startActivity(new Intent(Incidencias.this,MainActivity.class));
                         finish();
 
                     }
@@ -100,10 +109,16 @@ public class CheckOutActivity extends AppCompatActivity {
                 });
             }
         });
+
+
+
+
     }
 
+
+
     public void getLocation(){
-        gpsTracker = new GpsTracker(CheckOutActivity.this);
+        gpsTracker = new GpsTracker(Incidencias.this);
         if(gpsTracker.canGetLocation()){
             this.latitud = gpsTracker.getLatitude();
             this.longitud = gpsTracker.getLongitude();
@@ -112,6 +127,4 @@ public class CheckOutActivity extends AppCompatActivity {
             gpsTracker.showSettingsAlert();
         }
     }
-
-
 }

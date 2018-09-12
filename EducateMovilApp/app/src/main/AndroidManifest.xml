@@ -48,7 +48,9 @@
             android:name=".ui.CrearFormularioPedagogico"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.mostrarFormularioPedagogico" />
-        <activity android:name=".ui.escogerFormIngresado"></activity>
+        <activity android:name=".ui.escogerFormIngresado" />
+        <activity android:name=".ui.Incidencias" />
+        <activity android:name=".ui.incidenciaFormulario"></activity>
     </application>
 
 </manifest>

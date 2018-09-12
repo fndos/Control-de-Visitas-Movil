@@ -274,6 +274,7 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
                             String requerimiento_reason = visita_requerimiento.getAsJsonObject().get("reason").getAsString();
                             JsonElement visita_Escuela = visita_requerimiento.getAsJsonObject().get("school");
                             String escuela_direccion = visita_Escuela.getAsJsonObject().get("address").getAsString();
+                            int escuela_id = visita_Escuela.getAsJsonObject().get("id").getAsInt();
                             String escuela_embajador_in = visita_Escuela.getAsJsonObject().get("ambassador_in").getAsString();
                             String escuela_amie = visita_Escuela.getAsJsonObject().get("amie").getAsString();
                             String escuela_nombre = visita_Escuela.getAsJsonObject().get("name").getAsString();
@@ -355,6 +356,7 @@ public class OtrasVisitasFragment extends Fragment implements DatePickerDialog.O
                                 nuevaVisita.setSchool_parish(escuela_parroquia);
                                 nuevaVisita.setSchool_reference(escuela_referencia);
                                 nuevaVisita.setSchool_workday(escuela_jornada);
+                                nuevaVisita.setSchool_id(escuela_id);
                                 if(fechaExpirada && visita_estado==1){
                                     nuevaVisita.setState(3);
 

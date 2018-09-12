@@ -31,6 +31,7 @@ public class Visita implements Parcelable,Comparable {
       private String observation;
       private int requirement_id;
       private String requirement_reason;
+      private int school_id;
       private String school_address;
       private String school_ambassador_in;
       private String school_amie;
@@ -122,6 +123,14 @@ public class Visita implements Parcelable,Comparable {
 
     public void setObservation(String observation) {
         this.observation = observation;
+    }
+
+    public int getSchool_id() {
+        return school_id;
+    }
+
+    public void setSchool_id(int school_id) {
+        this.school_id = school_id;
     }
 
     public int getRequirement_id() {
@@ -248,6 +257,7 @@ public class Visita implements Parcelable,Comparable {
         observation = in.readString();
         requirement_id = in.readInt();
         requirement_reason = in.readString();
+        school_id = in.readInt();
         school_address = in.readString();
         school_ambassador_in = in.readString();
         school_amie = in.readString();
@@ -290,6 +300,7 @@ public class Visita implements Parcelable,Comparable {
         parcel.writeString(observation);
         parcel.writeInt(requirement_id);
         parcel.writeString(requirement_reason);
+        parcel.writeInt(school_id);
         parcel.writeString(school_address);
         parcel.writeString(school_ambassador_in);
         parcel.writeString(school_amie);
